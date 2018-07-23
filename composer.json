@@ -1,0 +1,14 @@
+{
+    "name": "tolek/rrapi",
+    "description": "API for RR",
+    "type": "library",
+    "license": "No",
+    "authors": [
+        {
+            "name": "Toleckk",
+            "email": "31159587+Toleckk@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

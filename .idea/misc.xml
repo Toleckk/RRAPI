@@ -5,7 +5,7 @@
       <usages-collector id="statistics.php.composer.actions">
         <counts>
           <entry key="addDependencyDialog_from_ProjectViewPopup" value="2" />
-          <entry key="dump-autoload_from_ProjectViewPopup" value="1" />
+          <entry key="dump-autoload_from_ProjectViewPopup" value="2" />
           <entry key="install_from_ComposerEditorNotificationPanel" value="5" />
           <entry key="require_from_AddDependencyDialog" value="1" />
           <entry key="status_from_ProjectViewPopup" value="1" />
@@ -14,7 +14,7 @@
       </usages-collector>
       <usages-collector id="statistics.php.composer.command.options">
         <counts>
-          <entry key="dump-autoload_with_--ansi_--no-interaction_--verbose" value="1" />
+          <entry key="dump-autoload_with_--ansi_--no-interaction_--verbose" value="2" />
           <entry key="require_with_--ansi_--no-interaction_--no-progress.default" value="1" />
         </counts>
       </usages-collector>

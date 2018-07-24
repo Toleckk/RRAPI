@@ -1,5 +1,6 @@
 /vendor/
 /.idea
 
-*.cookie
 script.php
+test.*
+/cookie

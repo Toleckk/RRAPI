@@ -13,6 +13,7 @@ use Authorization\AuthorizationHelper;
 use Authorization\Facebook;
 use Authorization\Google;
 use Authorization\VK;
+use Exception\ParseException;
 use Util\CURLHelper;
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -51,15 +52,21 @@ class RR{
 
     /**
      * @param int $id
-     * @return mixed|string
+     * @throws ParseException
      * @throws \Exception\RequestException
      */
     public function getAccount($id = -1){
         if($id < 0)
             $id = $this->accountID;
 
-        return $this->curl->get(
-            "http://rivalregions.com/slide/profile/$id?c=" . time()
+        $htmlBody = $this->curl->get(
+            "http://rivalregions.com/slide/profile/$id?c=" . CURLHelper::milliseconds()
         );
+
+        if(preg_match("/;\">.+: \d+ \(\d+ %\)<\/div>/", $htmlBody, $matches)){
+            preg_match("/ \d+ /", $matches[0], $matches);
+            $level = intval($matches);
+        } else
+            throw new ParseException("Can't find level. Please report issue.");
     }
 }

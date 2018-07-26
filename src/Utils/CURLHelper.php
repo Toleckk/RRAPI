@@ -14,6 +14,19 @@ use Exception\RequestException;
 class CURLHelper{
     public $headers = "";
 
+    /**
+     * @var string
+     */
+    private $cookiePath;
+
+    /**
+     * CURLHelper constructor.
+     * @param string $cookiePath
+     */
+    public function __construct($cookiePath = null){
+        $this->cookiePath = $cookiePath;
+    }
+
     public function handleHeaderLine($curl, $header_line){
         $this->headers .= $header_line;
         return strlen($header_line);
@@ -81,6 +94,8 @@ class CURLHelper{
             curl_setopt($ch, CURLOPT_COOKIEJAR, $cookieJar);
         if (isset($cookieFile))
             curl_setopt($ch, CURLOPT_COOKIEFILE, $cookieFile);
+        else if(isset($this->cookiePath))
+            curl_setopt($ch, CURLOPT_COOKIEFILE, $this->cookiePath);
         if (isset($referer))
             curl_setopt($ch, CURLOPT_REFERER, $referer);
 

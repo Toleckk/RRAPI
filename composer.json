@@ -10,13 +10,11 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        "sunra/php-simple-html-dom-parser": "1.5.2"
-    },
     "autoload": {
         "psr-4": {
             "Util\\": "src/Utils",
-            "Exception\\": "src/Exceptions"
+            "Exception\\": "src/Exceptions",
+            "Authorization\\": "src/Authorization"
         }
     }
 }

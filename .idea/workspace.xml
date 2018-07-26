@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5f1f52c-f3ca-457b-bccf-2603066db811" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/AuthorizationException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/MakeDirectoryException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/RRException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/RequestException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/CURLHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/HTMLParseHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Authorization/Facebook.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Authorization/Google.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Authorization/VK.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/RRAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RRAPI.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RR.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RR.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cookie/RR/310733603" beforeDir="false" afterPath="$PROJECT_DIR$/cookie/RR/310733603" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RR.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RR.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/CURLHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/CURLHelper.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,42 +27,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RR.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RR.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RR.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2051">
-              <caret line="167" column="12" selection-start-line="167" selection-start-column="12" selection-end-line="167" selection-end-column="12" />
+            <state relative-caret-position="568">
+              <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
               <folding>
-                <element signature="e#104#141#0#PHP" expanded="true" />
-                <element signature="e#457#690#0#PHP" />
+                <element signature="e#104#142#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="310733603" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cookie/RR/310733603">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="57" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="38" column="14" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -92,18 +62,23 @@
       <list>
         <option value="$PROJECT_DIR$/RR.php" />
         <option value="$PROJECT_DIR$/src/Utils/HTMLParseHelper.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Exceptions/RequestException.php" />
         <option value="$PROJECT_DIR$/src/Exceptions/RRException.php" />
         <option value="$PROJECT_DIR$/src/Exceptions/MakeDirectoryException.php" />
         <option value="$PROJECT_DIR$/src/Exceptions/AuthorizationException.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/Utils/CURLHelper.php" />
         <option value="$PROJECT_DIR$/src/Utils/FileWorker.php" />
         <option value="$PROJECT_DIR$/cookie/RR/310733603.txt" />
         <option value="$PROJECT_DIR$/script.php" />
-        <option value="$PROJECT_DIR$/src/RR.php" />
         <option value="$PROJECT_DIR$/cookie/RR/310733603" />
+        <option value="$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php" />
+        <option value="$PROJECT_DIR$/src/Utils/CURLHelper.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/src/Authorization/VK.php" />
+        <option value="$PROJECT_DIR$/src/Authorization/Google.php" />
+        <option value="$PROJECT_DIR$/src/Authorization/Facebook.php" />
+        <option value="$PROJECT_DIR$/src/Test.php" />
+        <option value="$PROJECT_DIR$/src/RR.php" />
       </list>
     </option>
   </component>
@@ -122,7 +97,6 @@
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/sunra/php-simple-html-dom-parser" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -131,13 +105,14 @@
     <option name="width" value="720" />
     <option name="height" value="688" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,40 +123,25 @@
             <path>
               <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
               <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="cookie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="cookie" type="462c0819:PsiDirectoryNode" />
-              <item name="RR" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
               <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
+              <item name="Authorization" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dumpAutoload E:/VISUAL/OpenServer/domains/RRAPI/composer.json" value="--no-interaction --ansi --verbose" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
@@ -225,7 +185,9 @@
       <workItem from="1532384222747" duration="3817000" />
       <workItem from="1532421908592" duration="14174000" />
       <workItem from="1532437067481" duration="2967000" />
-      <workItem from="1532440068648" duration="957000" />
+      <workItem from="1532440068648" duration="1054000" />
+      <workItem from="1532512158043" duration="9498000" />
+      <workItem from="1532583904385" duration="530000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1532384978179</created>
@@ -248,11 +210,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532388028089</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="VK auth refactor">
+      <created>1532441102416</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1532441102416</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21915000" />
+    <option name="totallyTimeSpent" value="32040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -267,17 +236,16 @@
     <frame x="-8" y="-8" width="1296" height="946" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27022654" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32920793" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32920793" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32920793" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32920793" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26213592" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32920793" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32920793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.048267327" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -286,6 +254,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32920793" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,16 +267,26 @@
     <MESSAGE value="Init" />
     <MESSAGE value="gitignore changes" />
     <MESSAGE value="VK auth added" />
-    <option name="LAST_COMMIT_MESSAGE" value="VK auth added" />
+    <MESSAGE value="VK auth refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="VK auth refactor" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/RR.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#104#142#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/RR.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1615">
           <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
           <folding>
-            <element signature="e#104#141#0#PHP" expanded="true" />
-            <element signature="e#457#690#0#PHP" />
+            <element signature="e#104#142#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -319,20 +298,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cookie/RR/310733603.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cookie/RR/310733603.txt" />
     <entry file="file://$PROJECT_DIR$/src/RR.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
           <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
           <folding>
-            <element signature="e#104#141#0#PHP" expanded="true" />
-            <element signature="e#457#690#0#PHP" />
+            <element signature="e#104#142#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -349,9 +321,7 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/a3gz/php-simple-html-dom-parser/Src/Sunra/PhpSimple/simplehtmldom_1_5/simple_html_dom.php" />
-    <entry file="file://$PROJECT_DIR$/composer.lock">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock" />
     <entry file="file://$PROJECT_DIR$/vendor/a3gz/php-simple-html-dom-parser/README.md" />
     <entry file="file://$PROJECT_DIR$/vendor/a3gz/php-simple-html-dom-parser/Src/Sunra/PhpSimple/HtmlDomParser.php" />
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
@@ -376,19 +346,8 @@
         <state relative-caret-position="-50" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/sunra/php-simple-html-dom-parser/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="255">
-            <caret line="30" selection-start-line="30" selection-end-line="30" selection-end-column="34" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/sunra/php-simple-html-dom-parser/Src/Sunra/PhpSimple/HtmlDomParser.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/sunra/php-simple-html-dom-parser/README.md" />
+    <entry file="file://$PROJECT_DIR$/vendor/sunra/php-simple-html-dom-parser/Src/Sunra/PhpSimple/HtmlDomParser.php" />
     <entry file="file://$PROJECT_DIR$/src/Utils/HTMLParseHelper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -407,13 +366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="914" column="9" selection-start-line="914" selection-start-column="9" selection-end-line="914" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -475,22 +427,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/a.txt" />
-    <entry file="file://$PROJECT_DIR$/src/Utils/CURLHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="84" column="54" selection-start-line="84" selection-start-column="54" selection-end-line="84" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/FileWorker.php" />
     <entry file="file://$PROJECT_DIR$/cookie/RR/id310733603" />
-    <entry file="file://$PROJECT_DIR$/cookie/RR/310733603.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cookie/RR/310733603.txt" />
     <entry file="file://$PROJECT_DIR$/test.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -505,21 +444,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RR.php">
+    <entry file="file://$PROJECT_DIR$/cookie/RR/310733603">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2051">
-          <caret line="167" column="12" selection-start-line="167" selection-start-column="12" selection-end-line="167" selection-end-column="12" />
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/CURLHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="99" column="47" lean-forward="true" selection-start-line="99" selection-start-column="47" selection-end-line="99" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.php" />
+    <entry file="file://$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
           <folding>
-            <element signature="e#104#141#0#PHP" expanded="true" />
-            <element signature="e#457#690#0#PHP" />
+            <element signature="e#116#153#0#PHP" expanded="true" />
+            <element signature="e#380#407#0#PHP" />
+            <element signature="e#439#469#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cookie/RR/310733603">
+    <entry file="file://$PROJECT_DIR$/src/Authorization/Facebook.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="57" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
+        <state relative-caret-position="204">
+          <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authorization/Google.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authorization/VK.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="65" column="40" lean-forward="true" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+          <folding>
+            <element signature="e#104#142#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

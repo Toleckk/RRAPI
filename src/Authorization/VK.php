@@ -41,7 +41,7 @@ class VK extends AuthorizationHelper{
      * @throws RequestException
      * @throws \Exception\MakeDirectoryException
      */
-    protected function authorizeRR(string $cookiePath): void {
+    protected function authorizeRR(string $cookiePath) : void {
         $id = $this->getID();
         $cookieRR = static::getCookieDirectory() . DIRECTORY_SEPARATOR . $id;
 

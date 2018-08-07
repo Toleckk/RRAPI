@@ -21,7 +21,7 @@ abstract class Builder{
      */
     public function __construct(string $html){
         $this->html = $html;
-        $className = (Parser::deleteAll('/Builder/', static::class));
+        $className = Parser::deleteAll('/Builder/', static::class);
         $this->model = new $className;
     }
 

@@ -25,8 +25,9 @@ class AccountBuilder extends Builder{
         preg_match('/>\d+</', $matches[0],$matches);
         $this->model->rating = Parser::getNumeric($matches[0]);
 
-        preg_match('/<div action="listed\/gain" title="\w+: \d+<br>Next level: .+/',
+        preg_match('/<div action="listed\/gain.+"/',
             Parser::deleteAll('/\./', $this->html), $matches);
+
         preg_match_all('/\d+/', $matches[0], $matches);
         $this->model->experience = $matches[0][0];
         $this->model->newLevelAt = $matches[0][1];

@@ -8,6 +8,8 @@
 
 namespace Entity;
 
+use Util\HTMLParseHelper as Parser;
+
 class Account{
     public $id;
     public $nickname;
@@ -39,8 +41,11 @@ class Account{
     public $residency;
     public $workPermission;
 
-
+    /**
+     * @param string $html
+     * @return Account
+     */
     public static function build(string $html) : Account{
-        return (new AccountBuilder($html))->build();
+        return (new AccountBuilder(Parser::deleteAll('/\./', $html)))->build();
     }
 }

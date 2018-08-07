@@ -13,8 +13,10 @@ use Authorization\AuthorizationHelper;
 use Authorization\Facebook;
 use Authorization\Google;
 use Authorization\VK;
+use Entity\Account;
 use Exception\ParseException;
 use Util\CURLHelper;
+use Util\HTMLParseHelper as Parser;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -23,6 +25,10 @@ class RR{
      * @var CURLHelper
      */
     private $curl;
+
+    /**
+     * @var int
+     */
     private $accountID;
 
     private function __construct(AuthorizationHelper $authHelper){
@@ -38,73 +44,30 @@ class RR{
      * @param bool $force
      * @return RR
      */
-    public static function VK($login, $password, $force = false): RR {
+    public static function VK(string $login, string $password, bool $force = false): RR {
         return new static(new VK($login, $password, $force));
     }
 
-    public static function Facebook($login, $password, $force = false) : RR{
+    public static function Facebook(string $login, string $password, bool $force = false) : RR{
         return new static(new Facebook($login, $password, $force));
     }
 
-    public static function Google($login, $password, $force = false) : RR{
+    public static function Google(string $login, string $password, bool $force = false) : RR{
         return new static(new Google($login, $password, $force));
     }
 
     /**
      * @param int $id
-     * @throws ParseException
+     * @return Account
      * @throws \Exception\RequestException
      */
-    public function getAccount($id = -1){
-        if($id < 0)
-            $id = $this->accountID;
-
+    public function getAccount(int $id = -1) : Account{
         $htmlBody = $this->curl->get(
-            "http://rivalregions.com/slide/profile/$id?c=" . CURLHelper::milliseconds());
+            "http://rivalregions.com/slide/profile/"
+            . ($id < 0 ? $this->accountID : $id)
+            . "?c=" . CURLHelper::milliseconds()
+        );
 
-        $properties = [];
-
-        preg_match("/;\">.+: \d+ \(\d+ %\)<\/div>/", $htmlBody, $matches);
-        preg_match("/ \d+ /", ($lvlString = $matches[0]), $matches);
-        $properties['level'] = $matches[0];
-        preg_match("/\d+/",
-            str_replace($properties['level'], '', $lvlString), $matches);
-        $properties['level_progress'] = $matches[0];
-
-        preg_match('/<span action="listed\/region" class="slide_karma dot hov2 pointer">\d+<\/span>/',
-            $htmlBody, $matches);
-        preg_match('/>\d+</', $matches[0], $matches);
-        $properties['rating'] = preg_replace('/\D/', '', $matches[0]);
-
-        preg_match('/<span action="listed\/perk\/1".+>/', $htmlBody, $matches);
-        preg_match_all('/>\d+</', $matches[0], $matches);
-        $properties['strength'] = preg_replace('/\D/', '', $matches[0][0]);
-        $properties['knowledge'] = preg_replace('/\D/', '', $matches[0][1]);
-        $properties['stamina'] = preg_replace('/\D/', '', $matches[0][2]);
-
-        preg_match('/.* action="listed\/work" .*>/', $htmlBody, $matches);
-        preg_match_all('/(\d+\.?)+\S/', $matches[0], $matches);
-        $properties['max_work_experience'] = preg_replace('/\D/', '', $matches[0][0]);
-        $properties['work_experience'] = preg_replace('/\D/', '', $matches[0][1]);
-
-        preg_match('/.*action="listed\/karma".*>/', $htmlBody, $matches);
-        preg_match_all('/[>+-]\d+</', $matches[0],$matches);
-        $properties['articles_count'] = preg_replace('/\D/', '', $matches[0][0]);
-        $properties['carma'] = ($matches[0][1][0] == '+' ? 1 : -1)
-            * preg_replace('/\D/', '', $matches[0][1]);
-
-        preg_match('/<div action="map\/details\/\d+"/', $htmlBody, $matches);
-        $properties['region_id'] = preg_replace('/\D/', '', $matches[0]);
-
-        preg_match('/" action=\"map\/details\/\d+/', $htmlBody, $matches);
-        $properties['residency_id'] = preg_replace('/\D/', '', $matches[0]);
-
-        foreach ($properties as $property => &$value)
-            if(isset($value))
-                $value = ctype_digit($temp = trim($value)) ? intval($temp) : $temp;
-            else
-                throw new ParseException("Can't find property $property. Please, report issue");
-        var_dump($properties);
-        return $properties;
+        return Account::build($htmlBody);
     }
 }

@@ -24,4 +24,11 @@ class HTMLParseHelper{
         return $result;
     }
 
+    public static function getNumeric($str){
+        return static::deleteAll('/\D/', $str);
+    }
+
+    public static function deleteAll($pattern, $str){
+        return is_null($str) ? null : preg_replace($pattern, '', $str);
+    }
 }

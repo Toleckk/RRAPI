@@ -44,7 +44,7 @@ class CURLHelper{
     public function get(
         $url, &$headers = null, $followLocation = 0, $cookieJar = null, $cookieFile = null, $referer = null
     ) : string{
-        return $this->sendRequest(curl_init(), $url, $headers, $followLocation, $cookieJar, $cookieFile, $referer);
+        return $this->sendRequest(\curl_init(), $url, $headers, $followLocation, $cookieJar, $cookieFile, $referer);
     }
 
     /**

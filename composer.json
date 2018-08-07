@@ -14,7 +14,8 @@
         "psr-4": {
             "Util\\": "src/Utils",
             "Exception\\": "src/Exceptions",
-            "Authorization\\": "src/Authorization"
+            "Authorization\\": "src/Authorization",
+            "Entity\\": "src/Entities"
         }
     }
 }

@@ -11,47 +11,25 @@ namespace Authorization;
 
 use Exception\AuthorizationException;
 use Exception\RequestException;
-use Util\HTMLParseHelper;
+use Util\HTMLParseHelper as Parser;
 
 class VK extends AuthorizationHelper{
     const OAUTH_URL =
         'https://oauth.vk.com/authorize?client_id=3524629&display=page&scope=notify,friends&redirect_uri=http://rivalregions.com/main/vklogin&response_type=code&state=';
+    const COOKIE_CHECK_URL = 'https://m.vk.com/id0';
 
     /**
+     * @param string $cookiePath
      * @throws RequestException
-     * @throws \Exception\MakeDirectoryException
-     * @throws AuthorizationException
      */
-    public function authorization() : void{
-        $cookiePath = static::getCookieDirectory('VK') . "/$this->login";
-
-        if (file_exists($cookiePath))
-            if ($this->force)
-                unlink($cookiePath);
-            else
-                try { //TODO: CHECK
-                    $this->curl->get("https://m.vk.com/id0", $headers, 0,
-                        null, $cookiePath);
-                } catch (RequestException $exception) {
-                    unlink($cookiePath);
-                }
-
-        if(!file_exists($cookiePath)) {
+    protected function logIn(string $cookiePath) : void{
+        if (!file_exists($cookiePath)) {
             $body = $this->curl->get("https://m.vk.com", $headers, 0, $cookiePath);
+            file_put_contents('test.txt', $body);
             $this->curl->post(
-                HTMLParseHelper::cut(substr($body, strpos($body, 'https://login.vk.com')), '"'),
+                Parser::cut(substr($body, strpos($body, 'https://login.vk.com')), '"'),
                 ["email" => $this->login, "pass" => $this->password],
-                $headers,1, $cookiePath, $cookiePath);
-        }
-
-        try {
-            $body = $this->curl->get("https://m.vk.com/id0", $headers, 0,
-                null, $cookiePath);
-            $this->authorizationRR(preg_replace( "/\D/", '',
-                    HTMLParseHelper::cut(substr($body, strpos($body, 'href="/id')), '?')),
-                $cookiePath);
-        } catch (RequestException $exception){
-            throw new AuthorizationException();
+                $headers, 1, $cookiePath, $cookiePath);
         }
     }
 
@@ -63,28 +41,29 @@ class VK extends AuthorizationHelper{
      * @throws RequestException
      * @throws \Exception\MakeDirectoryException
      */
-    protected function authorizationRR($id, $cookiePath) : void{
+    protected function authorizeRR(string $cookiePath): void {
+        $id = $this->getID();
         $cookieRR = static::getCookieDirectory() . DIRECTORY_SEPARATOR . $id;
 
-        if(file_exists($cookieRR) && ($this->force || $this->checkCookie($cookieRR) === false))
+        if (file_exists($cookieRR) && ($this->force || $this->checkRRCookies($cookieRR) === false))
             unlink($cookieRR);
 
-        if(!file_exists($cookieRR)) {
+        if (!file_exists($cookieRR)) {
             $body =
-                $this->curl->get(static::OAUTH_URL,$headers, 1,null, $cookiePath);
+                $this->curl->get(static::OAUTH_URL, $headers, 1, null, $cookiePath);
 
-            $this->curl->get(
-                HTMLParseHelper::cut(
-                    substr($body, strpos($body, 'https://login.vk.com/?act=grant_access')), '"'),
-                $headers,1,null, $cookiePath, static::OAUTH_URL);
+            if(preg_match('/https:\/\/login.vk.com\/\?act=grant_access.+\"/', $body)) {
+                $this->curl->get(
+                    Parser::cut(
+                        substr($body, strpos($body, 'https://login.vk.com/?act=grant_access')), '"'),
+                    $headers, 1, null, $cookiePath, static::OAUTH_URL);
+                $parameters = $this->getParametersFromHeaders($headers);
+            } else
+                $parameters = $this->getParametersFromBody($body);
 
-            $id = HTMLParseHelper::cut(substr($headers, strpos($headers, 'viewer_id=') + 10), "&");
-            $accessToken = substr(
-                HTMLParseHelper::cut(substr($headers, strpos($headers, 'access_token=') + 13), "&"),
-                0, 32);
-            $hash = substr(
-                HTMLParseHelper::cut(substr($headers, strpos($headers, 'auth_key=') + 9), "\n"),
-                0, 32);
+            $id = $parameters['id'];
+            $accessToken = $parameters['accessToken'];
+            $hash = $parameters['hash'];
 
             $this->curl->get(
                 "http://rivalregions.com/?id=$id&id=$id&gl_number=ru&gl_photo=&gl_photo_medium=&gl_photo_big=&tmz_sent=3&wdt_sent=1280&register_locale=ru&stateshow=&access_token=$accessToken&hash=$hash",
@@ -92,10 +71,60 @@ class VK extends AuthorizationHelper{
                 "http://rivalregions.com/?api_url=http://api.vk.com/api.php&access_token=$accessToken&language=0&api_id=3201433&viewer_id=$id&user_id=2018017&stateshow=&auth_key=$hash");
         }
 
-        if(($accountID = $this->checkCookie($cookieRR)) !== false) {
+        if (($accountID = $this->checkRRCookies($cookieRR)) !== false) {
             $this->accountID = $accountID;
             $this->cookiePath = $cookieRR;
         } else
             throw new AuthorizationException();
+    }
+
+    /**
+     * @param string $body
+     * @return string[]
+     */
+    private function getParametersFromBody(string $body) : array{
+        preg_match('/name="id" value="\d+">/', $body, $matches);
+        $parameters['id'] = Parser::getNumeric($matches[0]);
+        preg_match('/name="access_token".+"/', $body, $matches);
+        preg_match('/value=".+"/', $matches[0], $matches);
+        preg_match('/".+"/',$matches[0], $matches);
+        preg_match('/[^"].+[^"]/', $matches[0], $matches);
+        $parameters['accessToken'] = trim($matches[0]);
+        preg_match('/name="hash".+"/', $body, $matches);
+        preg_match('/value=".+"/', $matches[0], $matches);
+        preg_match('/".+"/',$matches[0], $matches);
+        preg_match('/[^"].+[^"]/', $matches[0], $matches);
+        $parameters['hash'] = trim($matches[0]);
+        return $parameters;
+    }
+
+    /**
+     * @param string $headers
+     * @return string[]
+     */
+    private function getParametersFromHeaders(string $headers) : array{
+        preg_match_all('/Location.+\n/', $headers, $matches);
+        preg_match('/[^(Location: )].+\n/', $matches[0][1],$matches);
+        $location = $matches[0];
+        preg_match('/access_token=.+?&/', $location,$matches);
+        preg_match('/[^(access_token=)].+[^&]/', $matches[0], $matches);
+        $parameters['accessToken'] = trim($matches[0]);
+        preg_match('/viewer_id=\d+?&/', $location, $matches);
+        $parameters['id'] = Parser::getNumeric($matches[0]);
+        preg_match('/auth_key=.+\n/', $location, $matches);
+        preg_match('/[^(auth_key=)].+\n/', $matches[0],$matches);
+        $parameters['hash'] = trim($matches[0]);
+        return $parameters;
+    }
+
+    /**
+     * @throws RequestException
+     * @throws \Exception\MakeDirectoryException
+     */
+    private function getID(){
+            $cookie = file_get_contents(static::getCookieDirectory('VK')
+                        . DIRECTORY_SEPARATOR . $this->login);
+            preg_match('/\tl\t\d+/', $cookie, $matches);
+            return Parser::getNumeric($matches[0]);
     }
 }

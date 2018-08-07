@@ -34,10 +34,11 @@ class CURLHelper{
 
     /**
      * @param $url
-     * @param int $followLocation
      * @param null $headers
+     * @param int $followLocation
      * @param null $cookieJar
      * @param null $cookieFile
+     * @param null $referer
      * @return mixed
      * @throws RequestException
      */

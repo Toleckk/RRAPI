@@ -31,11 +31,16 @@ class RR{
      */
     private $accountID;
 
+    /**
+     * RR constructor.
+     * @param AuthorizationHelper $authHelper
+     * @throws \Exception\MakeDirectoryException
+     */
     private function __construct(AuthorizationHelper $authHelper){
-        $authHelper->authorization();
-        $this->accountID = $authHelper->getAccountID();
+        $authHelper->authorize();
+        $this->accountID = $authHelper->accountID;
 
-        $this->curl = new CURLHelper($authHelper->getCookiePath());
+        $this->curl = new CURLHelper($authHelper->cookiePath);
     }
 
     /**
@@ -43,15 +48,30 @@ class RR{
      * @param string $password
      * @param bool $force
      * @return RR
+     * @throws \Exception\MakeDirectoryException
      */
     public static function VK(string $login, string $password, bool $force = false): RR {
         return new static(new VK($login, $password, $force));
     }
 
+    /**
+     * @param string $login
+     * @param string $password
+     * @param bool $force
+     * @return RR
+     * @throws \Exception\MakeDirectoryException
+     */
     public static function Facebook(string $login, string $password, bool $force = false) : RR{
         return new static(new Facebook($login, $password, $force));
     }
 
+    /**
+     * @param string $login
+     * @param string $password
+     * @param bool $force
+     * @return RR
+     * @throws \Exception\MakeDirectoryException
+     */
     public static function Google(string $login, string $password, bool $force = false) : RR{
         return new static(new Google($login, $password, $force));
     }
@@ -62,12 +82,10 @@ class RR{
      * @throws \Exception\RequestException
      */
     public function getAccount(int $id = -1) : Account{
-        $htmlBody = $this->curl->get(
-            "http://rivalregions.com/slide/profile/"
+        return Account::build(
+            $this->curl->get("http://rivalregions.com/slide/profile/"
             . ($id < 0 ? $this->accountID : $id)
-            . "?c=" . CURLHelper::milliseconds()
+            . "?c=" . CURLHelper::milliseconds())
         );
-
-        return Account::build($htmlBody);
     }
 }

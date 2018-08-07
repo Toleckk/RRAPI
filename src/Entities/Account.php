@@ -39,6 +39,7 @@ class Account{
     public $residency;
     public $workPermission;
 
+
     public static function build(string $html) : Account{
         return (new AccountBuilder($html))->build();
     }

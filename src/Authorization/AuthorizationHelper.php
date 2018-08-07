@@ -10,11 +10,12 @@ namespace Authorization;
 
 
 use Exception\MakeDirectoryException;
+use Exception\RequestException;
 use Util\CURLHelper;
 use Util\HTMLParseHelper;
 
 abstract class AuthorizationHelper{
-    const COOKIE_PATH = __DIR__.'/../cookie';
+    const COOKIE_PATH = __DIR__.'/../../cookie';
 
     protected $curl;
     protected $login;
@@ -24,12 +25,12 @@ abstract class AuthorizationHelper{
     /**
      * @var int
      */
-    protected $accountID;
+    public $accountID;
 
     /**
      * @var string
      */
-    protected $cookiePath;
+    public $cookiePath;
 
 
     /**
@@ -38,46 +39,40 @@ abstract class AuthorizationHelper{
      * @param string $password
      * @param bool $force
      */
-    public function __construct($login, $password, $force){
+    public function __construct(string $login, string $password, bool $force){
         $this->curl = new CURLHelper();
         $this->login = $login;
         $this->password = $password;
         $this->force = $force;
     }
 
-
-    abstract public function authorization() : void;
-
-    abstract protected function authorizationRR($id, $cookiePath) : void;
-
     /**
-     * @return int
+     * @throws MakeDirectoryException
      */
-    public function getAccountID() : int{
-        return $this->accountID;
+    public function authorize() : void {
+        $cookiePath = static::getCookieDirectory(array_pop(
+            explode(DIRECTORY_SEPARATOR, static::class))) . "/$this->login";
+        $this->deleteIfExpired($cookiePath);
+        $this->logIn($cookiePath);
+        $this->authorizeRR($cookiePath);
     }
 
-    /**
-     * @return string
-     */
-    public function getCookiePath(): string{
-        return $this->cookiePath;
-    }
+    abstract protected function logIn(string $cookiePath) : void;
+
+    abstract protected function authorizeRR(string $cookiePath) : void;
 
     /**
      * @param $type
      * @return string
      * @throws MakeDirectoryException
      */
-    protected static function getCookieDirectory($type = 'RR') : string{
-        $path = static::COOKIE_PATH
-            . DIRECTORY_SEPARATOR
-            . $type;
+    protected static function getCookieDirectory(string $type = 'RR') : string{
+        $path = static::COOKIE_PATH . DIRECTORY_SEPARATOR . $type;
 
-        if(file_exists($path) || mkdir($path, 0777, true))
-            return $path;
-        else
+        if(!(file_exists($path) || mkdir($path, 0777, true)))
             throw new MakeDirectoryException();
+
+        return $path;
     }
 
     /**
@@ -85,19 +80,28 @@ abstract class AuthorizationHelper{
      * @return bool|int
      * @throws \Exception\RequestException
      */
-    protected function checkCookie($cookieRR){
-        $body = $this->curl->get(
-            'rivalregions.com',
-            $headers,
-            1,
-            null,
-            $cookieRR
-        );
-
-        if(($pos = strpos($body, "var id")) !== false)
-            return intval(preg_replace("/\D/", '',
-                HTMLParseHelper::cut(substr($body, $pos), "\n")));
+    protected function checkRRCookies(string $cookieRR){
+        if(preg_match('/var id.+;/',
+            $this->curl->get('rivalregions.com', $headers, 1, null, $cookieRR),
+            $matches))
+            return HTMLParseHelper::getNumeric($matches[0]);
 
         return false;
+    }
+
+    /**
+     * @param string $cookiePath
+     */
+    protected function deleteIfExpired(string $cookiePath){
+        if (file_exists($cookiePath))
+            if ($this->force)
+                unlink($cookiePath);
+            else
+                try {
+                    $this->curl->get(static::COOKIE_CHECK_URL, $headers, 0,
+                        null, $cookiePath);
+                } catch (RequestException $exception) {
+                    unlink($cookiePath);
+                }
     }
 }

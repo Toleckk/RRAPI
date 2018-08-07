@@ -11,11 +11,11 @@ namespace Authorization;
 
 class Facebook extends AuthorizationHelper {
 
-    public function authorization(): void{
+    public function logIn(): void{
         // TODO: Implement authorization() method.
     }
 
-    protected function authorizationRR($id, $cookiePath): void{
+    protected function authorizeRR(string $id, string $cookiePath): void{
         // TODO: Implement authorizationRR() method.
     }
 }

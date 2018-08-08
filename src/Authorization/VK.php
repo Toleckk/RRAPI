@@ -49,7 +49,6 @@ class VK extends AuthorizationHelper{
             $body =
                 $this->curl->get(static::OAUTH_URL, $headers, 1, null, $cookiePath);
 
-
             if(strstr($body, 'https://login.vk.com/?act=grant_access')) {
                 $this->curl->get(
                     Parser::cut(

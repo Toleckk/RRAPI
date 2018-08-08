@@ -42,6 +42,8 @@ class Account{
     public $residency;
     public $workPermission;
 
+    public $party;
+
     /**
      * @param string $html
      * @return Account

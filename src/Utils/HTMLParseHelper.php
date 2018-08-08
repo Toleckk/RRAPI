@@ -12,6 +12,28 @@ namespace Util;
 class HTMLParseHelper{
 
     /**
+     * @param string $pattern
+     * @param string $str
+     * @return null|string
+     */
+    public static function find(string $pattern, string $str){
+        if(isset($str) && isset($pattern) && preg_match($pattern, $str, $matches))
+            return $matches[0];
+        return null;
+    }
+
+    /**
+     * @param string $pattern
+     * @param string $str
+     * @return null|array
+     */
+    public static function findAll(string $pattern, string $str) : array{
+        if(isset($str) && isset($pattern) && preg_match_all($pattern, $str, $matches))
+            return $matches[0];
+        return null;
+    }
+
+    /**
      * @param $str
      * @param $endSymbol
      * @return string

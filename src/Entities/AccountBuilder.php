@@ -13,96 +13,116 @@ use Util\HTMLParseHelper as Parser;
 class AccountBuilder extends Builder{
 
     protected function parseID(){
-        preg_match('/slide\/profile\/\d+/', $this->html, $matches);
-        $this->model->id = Parser::getNumeric($matches[0]);
+        $this->model->id = Parser::getNumeric(Parser::find('/slide\/profile\/\d+/', $this->html));
     }
 
     protected function parseRating(){
-        preg_match(//<span action="listed/region" class="slide_karma dot hob2 pointer">{{rating}}</span>
-            '/\<span action="listed\/region" class="slide_karma dot hov2 pointer"\>\d+\<\/span\>/',
-            $this->html, $matches);
-        preg_match('/>\d+</', $matches[0],$matches);
-        $this->model->rating = Parser::getNumeric($matches[0]);
+        $this->model->rating = Parser::getNumeric(Parser::find('/>\d+</',
+            Parser::find('/action="listed\/region".+>/', $this->html)));
     }
 
     protected function parseExperience(){
-        preg_match('/<div action="listed\/gain.+"/',
-            Parser::deleteAll('/\./', $this->html), $matches);
-
-        preg_match_all('/\d+/', $matches[0], $matches);
-        $this->model->experience = $matches[0][0];
-        $this->model->newLevelAt = $matches[0][1];
-        $this->model->experiencePerWeek = $matches[0][4];
+        $matches = Parser::findAll('/\d+/',
+            Parser::find('/<div action="listed\/gain.+"/', Parser::deleteAll('/\./', $this->html)));
+        $this->model->experience = $matches[0];
+        $this->model->newLevelAt = $matches[1];
+        $this->model->experiencePerWeek = $matches[4];
     }
 
     protected function parseLevel(){
-        preg_match("/;\">.+: \d+ \(\d+ %\)<\/div>/", $this->html, $matches);
-        preg_match("/ \d+ /", ($lvlString = $matches[0]), $matches);
-        $this->model->level = Parser::getNumeric($matches[0]);
-        $this->model->levelProgress
-            = Parser::getNumeric(Parser::deleteAll("/$matches[0]/", $lvlString));
+        $lvlString = Parser::find("/;\">.+: \d+ \(\d+ %\)<\/div>/", $this->html);
+        $matches = Parser::find("/ \d+ /", $lvlString);
+        $this->model->level = Parser::getNumeric($matches);
+        $this->model->levelProgress = Parser::getNumeric(Parser::deleteAll("/$matches/", $lvlString));
     }
 
     protected function parsePerks(){
-        preg_match('/action="listed\/perk\/1".+\n/', $this->html, $matches);
-        preg_match_all('/>\d+</', $matches[0], $matches);
-
-        $this->model->strength = Parser::getNumeric($matches[0][0]);
-        $this->model->education = Parser::getNumeric($matches[0][1]);
-        $this->model->endurance = Parser::getNumeric($matches[0][2]);
+        $matches = Parser::findAll('/>\d+</',
+            Parser::find('/action="listed\/perk\/1".+\n/', $this->html));
+        $this->model->strength = Parser::getNumeric($matches[0]);
+        $this->model->education = Parser::getNumeric($matches[1]);
+        $this->model->endurance = Parser::getNumeric($matches[2]);
     }
 
     protected function parseDamage(){
-        preg_match_all('/<td class="white imp" colspan="2" style="width: 250px;">.+\n.+<\/td>/',
-            $this->html, $matches);
-        preg_match('/\n.+/', $matches[0][0], $matches);
-        $this->model->damage = Parser::getNumeric($matches[0]);
+        $this->model->damage = Parser::getNumeric(Parser::find('/\n.+/',
+            Parser::find('/<td class="white imp" colspan="2" style="width: 250px;">.+\n.+<\/td>/',
+                $this->html)));
     }
 
     protected function parseArticles(){
-        preg_match('/action="listed\/papers\/.+\n/', $this->html, $matches);
-        preg_match_all('/>\+?\d+</', Parser::deleteAll('/\./', $matches[0]), $matches);
-
-        $this->model->articlesCount = Parser::getNumeric($matches[0][0]);
-        $this->model->karma = Parser::getNumeric($matches[0][1]) * ($matches[0][1][1] == '+' ? 1 : -1);
+        $matches = Parser::findAll('/>\+?\d+</',
+            Parser::deleteAll('/\./', Parser::find('/action="listed\/papers\/.+\n/', $this->html)));
+        $this->model->articlesCount = Parser::getNumeric($matches[0]);
+        $this->model->karma = Parser::getNumeric($matches[1]) * ($matches[1][1] == '+' ? 1 : -1);
     }
 
     protected function parseWorkExperience(){
-        preg_match('/.+action="listed\/work".+\n/', $this->html, $matches);
-        preg_match_all('/\d+/', Parser::deleteAll('/\./', $matches[0]), $matches);
-
-        $this->model->workExperienceLimit = $matches[0][0];
-        $this->model->workExperience = $matches[0][2];
+        $matches = Parser::findAll('/\d+/', Parser::deleteAll('/\./',
+            Parser::find('/.+action="listed\/work".+\n/', $this->html)));
+        $this->model->workExperienceLimit = $matches[0];
+        $this->model->workExperience = $matches[2];
     }
 
-    //TODO: REFACTOR
+
     protected function parsePlaces(){
-        preg_match_all('/map\/((details)|(state_details))\/\d+/', $this->html, $matches);
-        $matches = $matches[0];
-        array_shift($matches);
+        $matches = array_slice(
+            Parser::findAll('/map\/((details)|(state_details))\/\d+/', $this->html), 1);
 
-        if(preg_match('/state_details/', $matches[0]))
+        $this->setLeadershipIfLeader($matches);
+        $this->setBasicPlaces($matches);
+        $this->setWorkPermissionIfExist($matches);
+        $this->setPostsIfExist($matches);
+    }
+
+    private function setLeadershipIfLeader(array &$matches){
+        if(!is_null(Parser::find('/state_details/', $matches[0])))
             $this->model->leaderOf = Parser::getNumeric(array_shift($matches));
+    }
 
+    private function setBasicPlaces(array &$matches){
         $this->model->region = Parser::getNumeric(array_shift($matches));
         $this->model->residency = Parser::getNumeric(array_shift($matches));
+    }
 
-        //if is WP
-        if(preg_match('/\<div title=".+" action="'
-            . str_replace('/', '\/', $matches[0]) . '"/', $this->html))
+    private function setWorkPermissionIfExist(array &$matches){
+        if(Parser::find('/action="' . addcslashes($matches[0], '/') . '/', $this->html))
             $this->model->workPermission = Parser::getNumeric(array_shift($matches));
+    }
 
+    private function setPostsIfExist(array $matches){
         foreach ($matches as $match)
-            if(preg_match('/state_details/', $match))
+            if(Parser::find('/state_details/', $match))
                 $this->model->postIn = Parser::getNumeric($match);
             else
                 $this->model->governorOf = Parser::getNumeric($match);
     }
 
+
     protected function parseNickname(){
-        preg_match('/<h1 class="white hide_for_name">.+>/', $this->html, $matches);
-        $matches = explode(' ', $matches[0]);
-        $this->model->nickname = Parser::deleteAll('/[\[\]]/', $matches[9]);
-        $this->model->partyTag = Parser::deleteAll('/<.+>/', $matches[10]);
+        $matches = explode(' ', Parser::find('/<h1 class="white hide_for_name">.+>/', $this->html));
+        $this->model->partyTag = Parser::deleteAll('/[\[\]]/', $matches[9]);
+        $this->model->nickname = Parser::deleteAll('/<.+>/', $matches[10]);
+    }
+
+    protected function parseParty(){
+        $this->model->party = Parser::getNumeric(Parser::find('/slide\/party\/\d+/', $this->html));
+    }
+
+
+    protected function parseDonations(){
+        foreach (Parser::findAll('/tip pointer .+?(<\/span>)/',
+                Parser::deleteAll('/&nbsp;/', $this->html)) as $match)
+            if(!is_null($key = explode(' ', $match)[2]))
+                $this->model->donations[static::rightDonationKey($key)]
+                    = Parser::deleteAll('/<|>/', Parser::find('/>.+</', $match));
+    }
+
+    private static function rightDonationKey($key){
+        if($key == 'white')
+            return 'money';
+        else if ($key == 'yellow')
+            return 'gold';
+        return $key;
     }
 }

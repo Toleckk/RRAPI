@@ -52,7 +52,7 @@ class AccountBuilder extends Builder{
 
     protected function parseArticles(){
         preg_match('/action="listed\/papers\/.+\n/', $this->html, $matches);
-        preg_match_all('/>\+?\d+</', $matches[0], $matches);
+        preg_match_all('/>\+?\d+</', Parser::deleteAll('/\./', $matches[0]), $matches);
 
         $this->model->articlesCount = Parser::getNumeric($matches[0][0]);
         $this->model->karma = Parser::getNumeric($matches[0][1]) * ($matches[0][1][1] == '+' ? 1 : -1);
@@ -87,5 +87,12 @@ class AccountBuilder extends Builder{
                 $this->model->postIn = Parser::getNumeric($match);
             else
                 $this->model->governorOf = Parser::getNumeric($match);
+    }
+
+    protected function parseNickname(){
+        preg_match('/<h1 class="white hide_for_name">.+>/', $this->html, $matches);
+        $matches = explode(' ', $matches[0]);
+        $this->model->nickname = Parser::deleteAll('/[\[\]]/', $matches[9]);
+        $this->model->partyTag = Parser::deleteAll('/<.+>/', $matches[10]);
     }
 }

@@ -13,6 +13,7 @@ use Util\HTMLParseHelper as Parser;
 class Account{
     public $id;
     public $nickname;
+    public $partyTag;
 
     public $rating;
     public $level;
@@ -46,6 +47,6 @@ class Account{
      * @return Account
      */
     public static function build(string $html) : Account{
-        return (new AccountBuilder(Parser::deleteAll('/\./', $html)))->build();
+        return (new AccountBuilder($html))->build();
     }
 }

@@ -41,7 +41,6 @@ class VK extends AuthorizationHelper{
     protected function authorizeRR(string $cookiePath) : void {
         $id = $this->getID();
         $cookieRR = static::getCookieDirectory() . DIRECTORY_SEPARATOR . $id;
-
         if (file_exists($cookieRR) && ($this->force || $this->checkRRCookies($cookieRR) === false))
             unlink($cookieRR);
 

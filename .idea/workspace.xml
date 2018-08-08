@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d5f1f52c-f3ca-457b-bccf-2603066db811" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <executablePath>composer</executablePath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AccountBuilder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entities/AccountBuilder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+              <folding>
+                <element signature="e#187#508#0#PHP" />
+                <element signature="e#509#561#0#PHP" />
+                <element signature="e#221#1184#0#PHP" />
+                <element signature="e#1197#1580#0#PHP" />
+                <element signature="e#1586#1878#0#PHP" />
+                <element signature="e#1884#2242#0#PHP" />
+                <element signature="e#2248#2570#0#PHP" />
+                <element signature="e#2576#3532#0#PHP" />
+                <element signature="e#3511#3561#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthorizationHelper.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+              <folding>
+                <element signature="e#415#442#0#PHP" />
+                <element signature="e#471#501#0#PHP" />
+                <element signature="e#532#668#0#PHP" />
+                <element signature="e#673#892#0#PHP" />
+                <element signature="e#898#947#0#PHP" />
+                <element signature="e#1398#1489#0#PHP" />
+                <element signature="e#1494#1776#0#PHP" />
+                <element signature="e#1782#1884#0#PHP" />
+                <element signature="e#2177#2221#0#PHP" />
+                <element signature="e#2226#2666#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VK.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Authorization/VK.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="65" column="101" selection-start-line="65" selection-start-column="101" selection-end-line="65" selection-end-column="101" />
+              <folding>
+                <element signature="e#116#153#0#PHP" expanded="true" />
+                <element signature="e#511#587#0#PHP" />
+                <element signature="e#3995#4751#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>980.000</find>
+      <find>details/61</find>
+      <find>&lt;div action=&quot;map/details/</find>
+      <find>&quot; action=&quot;map/details/3610</find>
+      <find>&quot; action=&quot;map/details/</find>
+      <find>103</find>
+      <find>21.573.683.189</find>
+      <find>156.200</find>
+      <find>Российская Федерация</find>
+      <find>61</find>
+      <find>map/state_details/103</find>
+      <find>485</find>
+      <find>8.827</find>
+      <find>89.700.207</find>
+      <find>nyx</find>
+      <find>200</find>
+      <find>383</find>
+      <find>22.0</find>
+      <find>457</find>
+      <find>1.040</find>
+      <find>ec</find>
+      <find>ID</find>
+      <find>href=&quot;/id</find>
+      <find>grant</find>
+      <find>https://login.vk.com/?act=grant_access</find>
+      <find>102808314</find>
+      <find>310733</find>
+      <find>105</find>
+      <find>Бегемот</find>
+      <find>39775966</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/RR.php" />
+        <option value="$PROJECT_DIR$/src/Exceptions/RequestException.php" />
+        <option value="$PROJECT_DIR$/src/Exceptions/RRException.php" />
+        <option value="$PROJECT_DIR$/src/Exceptions/MakeDirectoryException.php" />
+        <option value="$PROJECT_DIR$/src/Exceptions/AuthorizationException.php" />
+        <option value="$PROJECT_DIR$/src/Utils/FileWorker.php" />
+        <option value="$PROJECT_DIR$/cookie/RR/310733603.txt" />
+        <option value="$PROJECT_DIR$/cookie/RR/310733603" />
+        <option value="$PROJECT_DIR$/src/Test.php" />
+        <option value="$PROJECT_DIR$/src/Exceptions/ParseException.php" />
+        <option value="$PROJECT_DIR$/src/Utils/HTMLParseHelper.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/test.txt" />
+        <option value="$PROJECT_DIR$/src/Authorization/Facebook.php" />
+        <option value="$PROJECT_DIR$/src/Authorization/Google.php" />
+        <option value="$PROJECT_DIR$/src/Entities/Model.php" />
+        <option value="$PROJECT_DIR$/src/Utils/CURLHelper.php" />
+        <option value="$PROJECT_DIR$/src/RR.php" />
+        <option value="$PROJECT_DIR$/src/Entities/Builder.php" />
+        <option value="$PROJECT_DIR$/src/Entities/Account.php" />
+        <option value="$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php" />
+        <option value="$PROJECT_DIR$/src/Entities/AccountBuilder.php" />
+        <option value="$PROJECT_DIR$/script.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Authorization/VK.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="182" />
+    <option name="y" value="114" />
+    <option name="width" value="720" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Authorization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dumpAutoload E:/VISUAL/OpenServer/domains/RRAPI/composer.json" value="--no-interaction --ansi --verbose" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\VISUAL\OpenServer\domains\RRAPI\src\Exceptions" />
+      <recent name="E:\VISUAL\OpenServer\domains\RRAPI\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="script.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/script.php" />
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.script.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d5f1f52c-f3ca-457b-bccf-2603066db811" name="Default" comment="" />
+      <created>1532384220988</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532384220988</updated>
+      <workItem from="1532384222747" duration="3817000" />
+      <workItem from="1532421908592" duration="14174000" />
+      <workItem from="1532437067481" duration="2967000" />
+      <workItem from="1532440068648" duration="1054000" />
+      <workItem from="1532512158043" duration="9498000" />
+      <workItem from="1532583904385" duration="2342000" />
+      <workItem from="1532607079570" duration="5351000" />
+      <workItem from="1532613288948" duration="59000" />
+      <workItem from="1532636104834" duration="10278000" />
+      <workItem from="1532694090597" duration="7826000" />
+      <workItem from="1532766692985" duration="594000" />
+      <workItem from="1532783589820" duration="864000" />
+      <workItem from="1532866390228" duration="1763000" />
+      <workItem from="1532946693684" duration="822000" />
+      <workItem from="1532963837710" duration="599000" />
+      <workItem from="1533045846575" duration="32000" />
+      <workItem from="1533591917385" duration="12075000" />
+      <workItem from="1533632689335" duration="25775000" />
+      <workItem from="1533680703057" duration="6642000" />
+    </task>
+    <task id="LOCAL-00001" summary="Init">
+      <created>1532384978179</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1532384978179</updated>
+    </task>
+    <task id="LOCAL-00002" summary="gitignore changes">
+      <created>1532385536858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1532385536858</updated>
+    </task>
+    <task id="LOCAL-00003" summary="VK auth added">
+      <created>1532388028089</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1532388028089</updated>
+    </task>
+    <task id="LOCAL-00004" summary="VK auth refactor">
+      <created>1532441102416</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1532441102416</updated>
+    </task>
+    <task id="LOCAL-00005" summary="VK auth refactor &amp; auth class added &amp; getAccount($id)">
+      <created>1532584615288</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1532584615288</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Level parsing added">
+      <created>1532612460860</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1532612460860</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Profile parse progress">
+      <created>1532649524646</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1532649524646</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Profile parse progress. Builder added">
+      <created>1533603950555</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1533603950555</updated>
+    </task>
+    <task id="LOCAL-00009" summary="RR auth fixes, architectural changes, refactoring">
+      <created>1533684231348</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1533684231348</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Parse fixes">
+      <created>1533685511815</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1533685511815</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Nickname parsing added">
+      <created>1533686981087</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1533686981087</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Refactoring">
+      <created>1533688437634</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1533688437634</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Gitignore update">
+      <created>1533688823331</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1533688823331</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Gitignore update">
+      <created>1533688875121</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1533688875121</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Refactoring">
+      <created>1533689052702</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1533689052702</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="106532000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1296" height="946" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2224919" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32920793" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32920793" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.09158416" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.38737625" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39975247" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32920793" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Init" />
+    <MESSAGE value="gitignore changes" />
+    <MESSAGE value="VK auth added" />
+    <MESSAGE value="VK auth refactor" />
+    <MESSAGE value="VK auth refactor &amp; auth class added &amp; getAccount($id)" />
+    <MESSAGE value="Level parsing added" />
+    <MESSAGE value="Profile parse progress" />
+    <MESSAGE value="Profile parse progress. Builder added" />
+    <MESSAGE value="RR auth fixes, architectural changes, refactoring" />
+    <MESSAGE value="Parse fixes" />
+    <MESSAGE value="Nickname parsing added" />
+    <MESSAGE value="Gitignore update" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/composer.lock" />
+    <entry file="file://$PROJECT_DIR$/vendor/a3gz/php-simple-html-dom-parser/README.md" />
+    <entry file="file://$PROJECT_DIR$/vendor/a3gz/php-simple-html-dom-parser/Src/Sunra/PhpSimple/HtmlDomParser.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_static.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/sunra/php-simple-html-dom-parser/README.md" />
+    <entry file="file://$PROJECT_DIR$/vendor/sunra/php-simple-html-dom-parser/Src/Sunra/PhpSimple/HtmlDomParser.php" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_5.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="914" column="9" selection-start-line="914" selection-start-column="9" selection-end-line="914" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/http/http.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="2420" column="9" selection-start-line="2420" selection-start-column="9" selection-end-line="2420" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/regex/ereg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="742">
+          <caret line="166" column="9" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_c.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-227">
+          <caret line="258" column="6" selection-start-line="258" selection-start-column="6" selection-end-line="258" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exceptions/MakeDirectoryException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exceptions/RequestException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exceptions/RRException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exceptions/AuthorizationException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cookie/VK/380938235499.cookie" />
+    <entry file="file://$PROJECT_DIR$/a.txt" />
+    <entry file="file://$PROJECT_DIR$/src/Utils/FileWorker.php" />
+    <entry file="file://$PROJECT_DIR$/cookie/RR/id310733603" />
+    <entry file="file://$PROJECT_DIR$/cookie/RR/310733603.txt" />
+    <entry file="file://$PROJECT_DIR$/cookie/RR/310733603">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.php" />
+    <entry file="file://$PROJECT_DIR$/src/Exceptions/ParseException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/HTMLParseHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_8.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="1041" column="9" selection-start-line="1041" selection-start-column="9" selection-end-line="1041" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cookie/VK/380938235499" />
+    <entry file="file://$PROJECT_DIR$/cookie/RR/0" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="579" column="9" selection-start-line="579" selection-start-column="9" selection-end-line="579" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://PHP/\Authorization\AuthorizationHelper">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>\Authorization\AuthorizationHelper</OriginalElement>
+          <nodes>
+            <node x="" y="">\Authorization\AuthorizationHelper</node>
+            <node x="" y="">\Authorization\Google</node>
+            <node x="" y="">\Authorization\VK</node>
+            <node x="" y="">\Authorization\Facebook</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="120.0" y="220.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authorization/Facebook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authorization/Google.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Model.php" />
+    <entry file="file://$PROJECT_DIR$/cookie/VK/380938235499">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2.txt" />
+    <entry file="file://$PROJECT_DIR$/cookie/RR/102808314" />
+    <entry file="file://$PROJECT_DIR$/src/Utils/CURLHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="84" column="27" lean-forward="true" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+          <folding>
+            <element signature="e#390#424#0#PHP" />
+            <element signature="e#449#476#0#PHP" />
+            <element signature="e#506#635#0#PHP" />
+            <element signature="e#640#857#0#PHP" />
+            <element signature="e#863#1026#0#PHP" />
+            <element signature="e#1190#1353#0#PHP" />
+            <element signature="e#1529#1692#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Builder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+          <folding>
+            <element signature="e#686#747#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2941">
+          <caret line="173" column="11" selection-start-line="173" selection-start-column="11" selection-end-line="173" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="315" column="9" selection-start-line="315" selection-start-column="9" selection-end-line="315" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/AccountBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+          <folding>
+            <element signature="e#187#508#0#PHP" />
+            <element signature="e#509#561#0#PHP" />
+            <element signature="e#221#1184#0#PHP" />
+            <element signature="e#1197#1580#0#PHP" />
+            <element signature="e#1586#1878#0#PHP" />
+            <element signature="e#1884#2242#0#PHP" />
+            <element signature="e#2248#2570#0#PHP" />
+            <element signature="e#2576#3532#0#PHP" />
+            <element signature="e#3511#3561#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+          <folding>
+            <element signature="e#415#442#0#PHP" />
+            <element signature="e#471#501#0#PHP" />
+            <element signature="e#532#668#0#PHP" />
+            <element signature="e#673#892#0#PHP" />
+            <element signature="e#898#947#0#PHP" />
+            <element signature="e#1398#1489#0#PHP" />
+            <element signature="e#1494#1776#0#PHP" />
+            <element signature="e#1782#1884#0#PHP" />
+            <element signature="e#2177#2221#0#PHP" />
+            <element signature="e#2226#2666#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authorization/VK.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="65" column="101" selection-start-line="65" selection-start-column="101" selection-end-line="65" selection-end-column="101" />
+          <folding>
+            <element signature="e#116#153#0#PHP" expanded="true" />
+            <element signature="e#511#587#0#PHP" />
+            <element signature="e#3995#4751#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

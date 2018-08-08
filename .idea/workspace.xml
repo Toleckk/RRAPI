@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d5f1f52c-f3ca-457b-bccf-2603066db811" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Authorization/VK.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Authorization/VK.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/AccountBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/AccountBuilder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +20,7 @@
       <file leaf-file-name="AccountBuilder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entities/AccountBuilder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="187">
               <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
               <folding>
                 <element signature="e#187#508#0#PHP" />
@@ -43,8 +40,8 @@
       <file leaf-file-name="AuthorizationHelper.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="68" column="79" selection-start-line="68" selection-start-column="79" selection-end-line="68" selection-end-column="79" />
+            <state relative-caret-position="453">
+              <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
               <folding>
                 <element signature="e#415#442#0#PHP" />
                 <element signature="e#471#501#0#PHP" />
@@ -54,7 +51,6 @@
                 <element signature="e#1398#1489#0#PHP" />
                 <element signature="e#1494#1776#0#PHP" />
                 <element signature="e#1782#1884#0#PHP" />
-                <element signature="e#1889#2171#0#PHP" />
                 <element signature="e#2177#2221#0#PHP" />
                 <element signature="e#2226#2666#0#PHP" />
               </folding>
@@ -62,34 +58,25 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="VK.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Authorization/VK.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="558">
+              <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
               <folding>
                 <element signature="e#116#153#0#PHP" expanded="true" />
                 <element signature="e#511#587#0#PHP" />
                 <element signature="e#3995#4751#0#PHP" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/script.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2941">
-              <caret line="173" column="11" selection-start-line="173" selection-start-column="11" selection-end-line="173" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -159,8 +146,8 @@
         <option value="$PROJECT_DIR$/src/Entities/Account.php" />
         <option value="$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php" />
         <option value="$PROJECT_DIR$/src/Entities/AccountBuilder.php" />
-        <option value="$PROJECT_DIR$/src/Authorization/VK.php" />
         <option value="$PROJECT_DIR$/script.php" />
+        <option value="$PROJECT_DIR$/src/Authorization/VK.php" />
       </list>
     </option>
   </component>
@@ -288,7 +275,7 @@
       <workItem from="1533045846575" duration="32000" />
       <workItem from="1533591917385" duration="12075000" />
       <workItem from="1533632689335" duration="25775000" />
-      <workItem from="1533680703057" duration="5637000" />
+      <workItem from="1533680703057" duration="6143000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1532384978179</created>
@@ -367,11 +354,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533686981087</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Refactoring">
+      <created>1533688437634</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1533688437634</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105527000" />
+    <option name="totallyTimeSpent" value="106033000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -384,15 +378,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="946" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2224919" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2224919" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32920793" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32920793" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.10643564" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.10643564" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.38737625" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -426,7 +421,8 @@
     <MESSAGE value="RR auth fixes, architectural changes, refactoring" />
     <MESSAGE value="Parse fixes" />
     <MESSAGE value="Nickname parsing added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nickname parsing added" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -518,13 +514,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cookie/VK/380938235499.cookie" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/a.txt" />
     <entry file="file://$PROJECT_DIR$/src/Utils/FileWorker.php" />
     <entry file="file://$PROJECT_DIR$/cookie/RR/id310733603" />
@@ -555,13 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="766" column="9" selection-start-line="766" selection-start-column="9" selection-end-line="766" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -666,9 +648,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/AccountBuilder.php">
+    <entry file="file://$PROJECT_DIR$/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2941">
+          <caret line="173" column="11" selection-start-line="173" selection-start-column="11" selection-end-line="173" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="315" column="9" selection-start-line="315" selection-start-column="9" selection-end-line="315" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/AccountBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
           <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
           <folding>
             <element signature="e#187#508#0#PHP" />
@@ -684,17 +687,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.txt">
+    <entry file="file://$PROJECT_DIR$/src/Authorization/VK.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2941">
-          <caret line="173" column="11" selection-start-line="173" selection-start-column="11" selection-end-line="173" selection-end-column="11" />
+        <state relative-caret-position="558">
+          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+          <folding>
+            <element signature="e#116#153#0#PHP" expanded="true" />
+            <element signature="e#511#587#0#PHP" />
+            <element signature="e#3995#4751#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="68" column="79" selection-start-line="68" selection-start-column="79" selection-end-line="68" selection-end-column="79" />
+        <state relative-caret-position="453">
+          <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
           <folding>
             <element signature="e#415#442#0#PHP" />
             <element signature="e#471#501#0#PHP" />
@@ -704,29 +712,16 @@
             <element signature="e#1398#1489#0#PHP" />
             <element signature="e#1494#1776#0#PHP" />
             <element signature="e#1782#1884#0#PHP" />
-            <element signature="e#1889#2171#0#PHP" />
             <element signature="e#2177#2221#0#PHP" />
             <element signature="e#2226#2666#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authorization/VK.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding>
-            <element signature="e#116#153#0#PHP" expanded="true" />
-            <element signature="e#511#587#0#PHP" />
-            <element signature="e#3995#4751#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

@@ -12,19 +12,20 @@ use Util\HTMLParseHelper as Parser;
 
 class AccountBuilder extends Builder{
 
-    protected function parseLevel(){
-        preg_match("/;\">.+: \d+ \(\d+ %\)<\/div>/", $this->html, $matches);
-        preg_match("/ \d+ /", ($lvlString = $matches[0]), $matches);
-        $this->model->level = Parser::getNumeric($matches[0]);
-        $this->model->levelProgress
-            = Parser::getNumeric(Parser::deleteAll("/$matches[0]/", $lvlString));
+    protected function parseID(){
+        preg_match('/slide\/profile\/\d+/', $this->html, $matches);
+        $this->model->id = Parser::getNumeric($matches[0]);
+    }
 
-        preg_match(
+    protected function parseRating(){
+        preg_match(//<span action="listed/region" class="slide_karma dot hob2 pointer">{{rating}}</span>
             '/\<span action="listed\/region" class="slide_karma dot hov2 pointer"\>\d+\<\/span\>/',
             $this->html, $matches);
         preg_match('/>\d+</', $matches[0],$matches);
         $this->model->rating = Parser::getNumeric($matches[0]);
+    }
 
+    protected function parseExperience(){
         preg_match('/<div action="listed\/gain.+"/',
             Parser::deleteAll('/\./', $this->html), $matches);
 
@@ -32,6 +33,14 @@ class AccountBuilder extends Builder{
         $this->model->experience = $matches[0][0];
         $this->model->newLevelAt = $matches[0][1];
         $this->model->experiencePerWeek = $matches[0][4];
+    }
+
+    protected function parseLevel(){
+        preg_match("/;\">.+: \d+ \(\d+ %\)<\/div>/", $this->html, $matches);
+        preg_match("/ \d+ /", ($lvlString = $matches[0]), $matches);
+        $this->model->level = Parser::getNumeric($matches[0]);
+        $this->model->levelProgress
+            = Parser::getNumeric(Parser::deleteAll("/$matches[0]/", $lvlString));
     }
 
     protected function parsePerks(){
@@ -66,6 +75,7 @@ class AccountBuilder extends Builder{
         $this->model->workExperience = $matches[0][2];
     }
 
+    //TODO: REFACTOR
     protected function parsePlaces(){
         preg_match_all('/map\/((details)|(state_details))\/\d+/', $this->html, $matches);
         $matches = $matches[0];

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5f1f52c-f3ca-457b-bccf-2603066db811" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Authorization/VK.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Authorization/VK.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Account.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entities/AccountBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/AccountBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Builder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,33 +23,55 @@
       <file leaf-file-name="AccountBuilder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entities/AccountBuilder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+            <state relative-caret-position="136">
+              <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
               <folding>
-                <element signature="e#187#1191#0#PHP" />
+                <element signature="e#187#508#0#PHP" />
+                <element signature="e#509#561#0#PHP" />
+                <element signature="e#221#1184#0#PHP" />
                 <element signature="e#1197#1580#0#PHP" />
                 <element signature="e#1586#1878#0#PHP" />
+                <element signature="e#1884#2242#0#PHP" />
                 <element signature="e#2248#2570#0#PHP" />
                 <element signature="e#2576#3532#0#PHP" />
+                <element signature="e#3511#3561#0#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Builder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entities/Builder.php">
+      <file leaf-file-name="AuthorizationHelper.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="536">
+              <caret line="68" column="79" selection-start-line="68" selection-start-column="79" selection-end-line="68" selection-end-column="79" />
+              <folding>
+                <element signature="e#415#442#0#PHP" />
+                <element signature="e#471#501#0#PHP" />
+                <element signature="e#532#668#0#PHP" />
+                <element signature="e#673#892#0#PHP" />
+                <element signature="e#898#947#0#PHP" />
+                <element signature="e#1398#1489#0#PHP" />
+                <element signature="e#1494#1776#0#PHP" />
+                <element signature="e#1782#1884#0#PHP" />
+                <element signature="e#1889#2171#0#PHP" />
+                <element signature="e#2177#2221#0#PHP" />
+                <element signature="e#2226#2666#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.txt">
+      <file leaf-file-name="VK.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Authorization/VK.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="397" column="41" selection-start-line="397" selection-start-column="41" selection-end-line="397" selection-end-column="41" />
+            <state relative-caret-position="374">
+              <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+              <folding>
+                <element signature="e#116#153#0#PHP" expanded="true" />
+                <element signature="e#511#587#0#PHP" />
+                <element signature="e#3995#4751#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,8 +79,17 @@
       <file leaf-file-name="script.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2941">
+              <caret line="173" column="11" selection-start-line="173" selection-start-column="11" selection-end-line="173" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -67,8 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Уровень</find>
-      <find>166</find>
       <find>980.000</find>
       <find>details/61</find>
       <find>&lt;div action=&quot;map/details/</find>
@@ -97,6 +126,8 @@
       <find>102808314</find>
       <find>310733</find>
       <find>105</find>
+      <find>Бегемот</find>
+      <find>39775966</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,11 +155,11 @@
         <option value="$PROJECT_DIR$/src/Entities/Model.php" />
         <option value="$PROJECT_DIR$/src/Utils/CURLHelper.php" />
         <option value="$PROJECT_DIR$/src/RR.php" />
-        <option value="$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php" />
-        <option value="$PROJECT_DIR$/src/Authorization/VK.php" />
-        <option value="$PROJECT_DIR$/src/Entities/Account.php" />
-        <option value="$PROJECT_DIR$/src/Entities/AccountBuilder.php" />
         <option value="$PROJECT_DIR$/src/Entities/Builder.php" />
+        <option value="$PROJECT_DIR$/src/Entities/Account.php" />
+        <option value="$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php" />
+        <option value="$PROJECT_DIR$/src/Entities/AccountBuilder.php" />
+        <option value="$PROJECT_DIR$/src/Authorization/VK.php" />
         <option value="$PROJECT_DIR$/script.php" />
       </list>
     </option>
@@ -171,23 +202,6 @@
             <path>
               <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
               <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="cookie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="cookie" type="462c0819:PsiDirectoryNode" />
-              <item name="RR" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RRAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="cookie" type="462c0819:PsiDirectoryNode" />
-              <item name="VK" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RRAPI" type="b2602c69:ProjectViewProjectNode" />
@@ -274,7 +288,7 @@
       <workItem from="1533045846575" duration="32000" />
       <workItem from="1533591917385" duration="12075000" />
       <workItem from="1533632689335" duration="25775000" />
-      <workItem from="1533680703057" duration="2790000" />
+      <workItem from="1533680703057" duration="5637000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1532384978179</created>
@@ -339,11 +353,25 @@
       <option name="project" value="LOCAL" />
       <updated>1533684231348</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Parse fixes">
+      <created>1533685511815</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1533685511815</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Nickname parsing added">
+      <created>1533686981087</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1533686981087</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102680000" />
+    <option name="totallyTimeSpent" value="105527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -356,7 +384,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="946" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2224919" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32920793" />
@@ -365,7 +392,7 @@
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32920793" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38242576" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.10643564" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.38737625" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -397,11 +424,13 @@
     <MESSAGE value="Profile parse progress" />
     <MESSAGE value="Profile parse progress. Builder added" />
     <MESSAGE value="RR auth fixes, architectural changes, refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="RR auth fixes, architectural changes, refactoring" />
+    <MESSAGE value="Parse fixes" />
+    <MESSAGE value="Nickname parsing added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nickname parsing added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -604,42 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authorization/VK.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
-          <folding>
-            <element signature="e#116#153#0#PHP" expanded="true" />
-            <element signature="e#511#587#0#PHP" />
-            <element signature="e#592#1079#0#PHP" />
-            <element signature="e#1085#1278#0#PHP" />
-            <element signature="e#1283#3056#0#PHP" />
-            <element signature="e#3062#3124#0#PHP" />
-            <element signature="e#3129#3917#0#PHP" />
-            <element signature="e#3923#3988#0#PHP" />
-            <element signature="e#3993#4749#0#PHP" />
-            <element signature="e#4755#4847#0#PHP" />
-            <element signature="e#4852#5128#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-511">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#415#442#0#PHP" />
-            <element signature="e#471#501#0#PHP" />
-            <element signature="e#532#668#0#PHP" />
-            <element signature="e#673#892#0#PHP" />
-            <element signature="e#898#947#0#PHP" />
-            <element signature="e#1038#1105#1#PHP" />
-            <element signature="e#1889#2171#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RR.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -656,45 +649,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="397" column="41" selection-start-line="397" selection-start-column="41" selection-end-line="397" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="128">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+          <folding>
+            <element signature="e#686#747#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/AccountBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        <state relative-caret-position="136">
+          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
           <folding>
-            <element signature="e#187#1191#0#PHP" />
+            <element signature="e#187#508#0#PHP" />
+            <element signature="e#509#561#0#PHP" />
+            <element signature="e#221#1184#0#PHP" />
             <element signature="e#1197#1580#0#PHP" />
             <element signature="e#1586#1878#0#PHP" />
+            <element signature="e#1884#2242#0#PHP" />
             <element signature="e#2248#2570#0#PHP" />
             <element signature="e#2576#3532#0#PHP" />
+            <element signature="e#3511#3561#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2941">
+          <caret line="173" column="11" selection-start-line="173" selection-start-column="11" selection-end-line="173" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authorization/AuthorizationHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="68" column="79" selection-start-line="68" selection-start-column="79" selection-end-line="68" selection-end-column="79" />
+          <folding>
+            <element signature="e#415#442#0#PHP" />
+            <element signature="e#471#501#0#PHP" />
+            <element signature="e#532#668#0#PHP" />
+            <element signature="e#673#892#0#PHP" />
+            <element signature="e#898#947#0#PHP" />
+            <element signature="e#1398#1489#0#PHP" />
+            <element signature="e#1494#1776#0#PHP" />
+            <element signature="e#1782#1884#0#PHP" />
+            <element signature="e#1889#2171#0#PHP" />
+            <element signature="e#2177#2221#0#PHP" />
+            <element signature="e#2226#2666#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authorization/VK.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding>
+            <element signature="e#116#153#0#PHP" expanded="true" />
+            <element signature="e#511#587#0#PHP" />
+            <element signature="e#3995#4751#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>

@@ -68,7 +68,6 @@ abstract class AuthorizationHelper{
      */
     protected static function getCookieDirectory(string $type = 'RR') : string{
         $path = static::COOKIE_PATH . DIRECTORY_SEPARATOR . $type;
-
         if(!(file_exists($path) || mkdir($path, 0777, true)))
             throw new MakeDirectoryException();
 

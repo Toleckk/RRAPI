@@ -13,6 +13,7 @@ use Exception\AuthorizationException;
 use Exception\RequestException;
 use Util\HTMLParseHelper as Parser;
 
+//TODO: REFACTOR
 class VK extends AuthorizationHelper{
     const OAUTH_URL =
         'https://oauth.vk.com/authorize?client_id=3524629&display=page&scope=notify,friends&redirect_uri=http://rivalregions.com/main/vklogin&response_type=code&state=';
@@ -24,19 +25,15 @@ class VK extends AuthorizationHelper{
      */
     protected function logIn(string $cookiePath) : void{
         if (!file_exists($cookiePath)) {
-            $body = $this->curl->get("https://m.vk.com", $headers, 0, $cookiePath);
-            file_put_contents('test.txt', $body);
-            $this->curl->post(
-                Parser::cut(substr($body, strpos($body, 'https://login.vk.com')), '"'),
-                ["email" => $this->login, "pass" => $this->password],
-                $headers, 1, $cookiePath, $cookiePath);
+            preg_match('/https:\/\/login.vk.com.+?"/',
+                $this->curl->get("https://m.vk.com", $headers, 0, $cookiePath), $matches);
+            $this->curl->post(Parser::deleteAll('/"/', $matches[0]), ["email" => $this->login,
+                "pass" => $this->password], $headers, 1, $cookiePath, $cookiePath);
         }
     }
 
     /**
-     * @param $id
-     * @param $cookiePath
-     * @return int
+     * @param string $cookiePath
      * @throws AuthorizationException
      * @throws RequestException
      * @throws \Exception\MakeDirectoryException
@@ -52,7 +49,8 @@ class VK extends AuthorizationHelper{
             $body =
                 $this->curl->get(static::OAUTH_URL, $headers, 1, null, $cookiePath);
 
-            if(preg_match('/https:\/\/login.vk.com\/\?act=grant_access.+\"/', $body)) {
+
+            if(strstr($body, 'https://login.vk.com/?act=grant_access')) {
                 $this->curl->get(
                     Parser::cut(
                         substr($body, strpos($body, 'https://login.vk.com/?act=grant_access')), '"'),
@@ -118,7 +116,7 @@ class VK extends AuthorizationHelper{
     }
 
     /**
-     * @throws RequestException
+     * @return string
      * @throws \Exception\MakeDirectoryException
      */
     private function getID(){

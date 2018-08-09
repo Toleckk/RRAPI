@@ -13,10 +13,6 @@ use Exception\RequestException;
 
 class CURLHelper{
     public $headers = "";
-
-    /**
-     * @var string
-     */
     private $cookiePath;
 
     /**
@@ -51,10 +47,11 @@ class CURLHelper{
     /**
      * @param $url
      * @param array $values
-     * @param $followLocation
      * @param &$headers
+     * @param int $followLocation
      * @param string $cookieJar
      * @param string $cookieFile
+     * @param null $referer
      * @return string
      * @throws RequestException
      */

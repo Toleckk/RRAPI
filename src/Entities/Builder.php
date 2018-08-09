@@ -17,19 +17,18 @@ abstract class Builder{
 
     /**
      * Builder constructor.
+     * @param \stdClass $model
      * @param string $html
      */
-    public function __construct(string $html){
+    public function __construct(string $html, \stdClass $model = null){
         $this->html = $html;
-        file_put_contents('test.txt', $html);
-        $className = Parser::deleteAll('/Builder/', static::class);
-        $this->model = new $className;
+        $this->model = is_null($model) ? new \stdClass() : $model;
     }
 
     public function build(){
         try {
             foreach ((new \ReflectionClass(static::class))->getMethods() as $method)
-                if (preg_match('/^parse\w+$/', ($name = $method->getName())))
+                if($name = Parser::find('/^parse\w+$/', $method->getName()))
                     $this->$name();
         } catch (\ReflectionException $e) {}
         return $this->model;

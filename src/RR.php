@@ -82,7 +82,7 @@ class RR{
      * @throws \Exception\RequestException
      */
     public function getAccount(int $id = -1) : Account{
-        return Account::build(
+        return Account::build($this,
             $this->curl->get("http://rivalregions.com/slide/profile/"
             . ($id < 0 ? $this->accountID : $id)
             . "?c=" . CURLHelper::milliseconds())

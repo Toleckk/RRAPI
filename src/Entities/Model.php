@@ -8,37 +8,44 @@
 
 namespace Entity;
 
-
 use RR\RR;
 use Util\HTMLParseHelper;
 
 abstract class Model{
-    use LazyLoaderTrait{ LazyLoaderTrait::__construct as private LazyLoaderTrait; }
+    use LazyLoaderTrait;
 
     private $model;
 
     public static function build(RR &$rr, string $html){
-        $builderName = static::class . 'Builder';
-        $instance = new static($rr, (new $builderName($html))->build());
+        $builderName = str_replace('Entity', 'Builder', static::class . 'Builder');
+        $instance = (new $builderName($html, new static(null, $rr)))->build();
         $instance->loaded = true;
         return $instance;
     }
 
-    private function __construct(RR &$rr, $model){
-        $this->LazyLoaderTrait($rr);
-        $this->model = $model;
+    public function __construct(string $id = null, RR &$rr = null){
+        $this->setRR($rr);
+        $this->model = new \stdClass();
+        $this->model->id = $id;
     }
 
     private function getModel(){
-        return ($this->loaded ? $this->model : $this->load());
+        return ($this->loaded ? $this->model : $this->load()->model);
     }
 
     public function __call($name, $arguments){
-        if(preg_match('/^get\w+$/', $name) && empty($arguments)){
+        if(preg_match('/^get\w+$/', $name)){
             $property = lcfirst(HTMLParseHelper::deleteAll('/get/', $name));
-            return $this->getModel()->$property;
+            $value = $this->getModel()->$property;
+            return (is_subclass_of($value, self::class) ? $value->load() : $value);
         } else
             return null;
+    }
+
+    public function __set(string $name, $value){
+        if(is_subclass_of($value, self::class, false))
+            $value->setRR($this->rr);
+        $this->model->$name = $value;
     }
 
     public function __debugInfo(){

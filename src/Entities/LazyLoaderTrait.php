@@ -15,13 +15,14 @@ trait LazyLoaderTrait{
     private $rr;
     protected $loaded = false;
 
-    public function __construct(RR $rr){
+    protected function setRR(&$rr){
         $this->rr = $rr;
     }
 
     protected function load(){
         $getterName = 'get' . ucfirst(array_pop(explode('\\', static::class)));
+        $this->model = $this->rr->$getterName($this->model->id)->model;
         $this->loaded = true;
-        return $this->rr->$getterName($this->model->id);
+        return $this;
     }
 }

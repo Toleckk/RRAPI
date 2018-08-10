@@ -15,7 +15,9 @@
             "Util\\": "src/Utils",
             "Exception\\": "src/Exceptions",
             "Authorization\\": "src/Authorization",
-            "Entity\\": "src/Entities"
+            "Entity\\": "src/Entities",
+            "Builder\\": "src/Builders"
+
         }
     }
 }

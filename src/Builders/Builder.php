@@ -6,9 +6,9 @@
  * Time: 13:30
  */
 
-namespace Entity;
+namespace Builder;
 
-
+use Entity\Model;
 use Util\HTMLParseHelper as Parser;
 
 abstract class Builder{
@@ -20,7 +20,7 @@ abstract class Builder{
      * @param \stdClass $model
      * @param string $html
      */
-    public function __construct(string $html, \stdClass $model = null){
+    public function __construct(string $html, Model &$model = null){
         $this->html = $html;
         $this->model = is_null($model) ? new \stdClass() : $model;
     }

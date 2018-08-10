@@ -17,8 +17,8 @@ class AccountBuilder extends Builder{
     }
 
     protected function parseRating(): void{
-        $this->model->rating = Parser::getNumeric(Parser::find('/>\d+</',
-            Parser::find('/action="listed\/region".+>/', $this->html)));
+        $this->model->rating = intval(Parser::getNumeric(Parser::find('/>\d+</',
+            Parser::find('/action="listed\/region".+>/', $this->html))));
     }
 
     protected function parseExperience(): void{
@@ -30,7 +30,7 @@ class AccountBuilder extends Builder{
     }
 
     protected function parseLevel(): void{
-        $lvlString = Parser::find("/;\">.+: \d+ \(\d+ %\)<\/div>/", $this->html);
+        $lvlString = intval(Parser::find("/;\">.+: \d+ \(\d+ %\)<\/div>/", $this->html));
         $matches = Parser::find("/ \d+ /", $lvlString);
         $this->model->level = Parser::getNumeric($matches);
         $this->model->levelProgress = Parser::getNumeric(Parser::deleteAll("/$matches/", $lvlString));

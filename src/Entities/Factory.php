@@ -2,11 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: Tolek
- * Date: 11.08.2018
- * Time: 23:00
+ * Date: 12.08.2018
+ * Time: 1:14
  */
 
 namespace Entity;
 
-//TODO
-class Autonomy extends Model{}
+
+class Factory extends Model {}

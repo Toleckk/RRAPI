@@ -14,22 +14,24 @@ class HTMLParseHelper{
     /**
      * @param string $pattern
      * @param string $str
-     * @return null|string
+     * @param bool $fullResponse
+     * @return string|null
      */
-    public static function find(string $pattern, string $str){
+    public static function find(string $pattern, string $str, bool $fullResponse = false){
         if(isset($str) && isset($pattern) && preg_match($pattern, $str, $matches))
-            return $matches[0];
+            return $fullResponse ? $matches : $matches[0];
         return null;
     }
 
     /**
      * @param string $pattern
      * @param string $str
-     * @return null|array
+     * @param bool $fullResponse
+     * @return array|null
      */
-    public static function findAll(string $pattern, string $str) : array{
+    public static function findAll(string $pattern, string $str, bool $fullResponse = false){
         if(isset($str) && isset($pattern) && preg_match_all($pattern, $str, $matches))
-            return $matches[0];
+            return $fullResponse ? $matches : $matches[0];
         return null;
     }
 

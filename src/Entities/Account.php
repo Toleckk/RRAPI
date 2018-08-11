@@ -2,28 +2,32 @@
 /**
  * Created by PhpStorm.
  * User: Tolek
- * Date: 07.08.2018
- * Time: 1:03
+ * Date: 11.08.2018
+ * Time: 2:08
  */
 
 namespace Entity;
 
+
+use RR\RR;
+
 /**
  * Class Account
  * @package Entity
+ * @method string getId()
  * @method string getNickname()
  * @method string getPartyTag()
  * @method int getRating()
  * @method int getLevel()
  * @method string getExperience()
  * @method string getNewLevelAt()
- * @method string getLevelProgress()
+ * @method int getLevelProgress()
  * @method string getExperiencePerWeek()
  * @method string getStrength()
  * @method string getEducation()
  * @method string getEndurance()
  * @method string getDamage()
- * @method string getArticlesCount()
+ * @method int getArticlesCount()
  * @method string getKarma()
  * @method string getWorkExperienceLimit()
  * @method string getWorkExperience()
@@ -32,8 +36,9 @@ namespace Entity;
  * @method Autonomy getGovernorOf()
  * @method Region getRegion()
  * @method Region getResidency()
- * @method getWorkPermission() //TODO
+ * @method WorkPermitable getWorkPermission()
  * @method Party getParty()
  * @method array getDonations()
+ * @method Collection getArticles()
  */
-class Account extends Model{}
+class Account extends Model {}

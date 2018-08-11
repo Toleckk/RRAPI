@@ -2,13 +2,20 @@
 /**
  * Created by PhpStorm.
  * User: Tolek
- * Date: 10.08.2018
- * Time: 2:58
+ * Date: 11.08.2018
+ * Time: 22:59
  */
 
 namespace Entity;
 
+/**
+ * Class State
+ * @package Entity
+ * @method Collection getWorkPermits()
+ */
+class State extends Model implements WorkPermitable {
 
-class State extends Model{
-
+    public function applyForWorkPermit(){
+        // TODO: Implement applyForWorkPermit() method.
+    }
 }

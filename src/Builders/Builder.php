@@ -2,27 +2,31 @@
 /**
  * Created by PhpStorm.
  * User: Tolek
- * Date: 07.08.2018
- * Time: 13:30
+ * Date: 11.08.2018
+ * Time: 3:57
  */
 
 namespace Builder;
 
-use Entity\Model;
+use RR\RR;
 use Util\HTMLParseHelper as Parser;
 
 abstract class Builder{
-    protected $model;
     protected $html;
+    protected $data;
+    /**
+     * @var RR
+     */
+    protected $rr;
 
     /**
-     * Builder constructor.
-     * @param \stdClass $model
+     * ArticlesBuilder constructor.
      * @param string $html
+     * @param RR $rr
      */
-    public function __construct(string $html, Model &$model = null){
+    public function __construct(string $html, RR &$rr){
         $this->html = $html;
-        $this->model = is_null($model) ? new \stdClass() : $model;
+        $this->rr = $rr;
     }
 
     public function build(){
@@ -31,6 +35,8 @@ abstract class Builder{
                 if($name = Parser::find('/^parse\w+$/', $method->getName()))
                     $this->$name();
         } catch (\ReflectionException $e) {}
-        return $this->model;
+        return $this->createContainer($this->data);
     }
+
+    protected abstract function createContainer($data);
 }

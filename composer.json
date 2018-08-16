@@ -9,6 +9,9 @@
             "email": "31159587+Toleckk@users.noreply.github.com"
         }
     ],
+    "require": {
+    	"php": ">=7.2"
+    },
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {

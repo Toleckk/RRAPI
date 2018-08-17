@@ -33,6 +33,7 @@ abstract class Container extends LazyLoader{
             return null;
 
         $value = $this->data->{lcfirst($matches[1])};
-        return (is_object($value) && is_subclass_of($value, self::class) ? $value->get() : $value);
+        return (is_object($value) && is_subclass_of($value, self::class)
+            ? $value->get((bool)$arguments[0]) : $value);
     }
 }

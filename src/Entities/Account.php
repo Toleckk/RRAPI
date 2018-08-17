@@ -8,9 +8,6 @@
 
 namespace Entity;
 
-
-use RR\RR;
-
 /**
  * Class Account
  * @package Entity
@@ -31,14 +28,14 @@ use RR\RR;
  * @method string getKarma()
  * @method string getWorkExperienceLimit()
  * @method string getWorkExperience()
- * @method State getLeaderOf()
- * @method State getPostIn()
- * @method Autonomy getGovernorOf()
- * @method Region getRegion()
- * @method Region getResidency()
- * @method WorkPermitable getWorkPermission()
- * @method Party getParty()
+ * @method State getLeaderOf(bool $force = false)
+ * @method State getPostIn(bool $force = false)
+ * @method Autonomy getGovernorOf(bool $force = false)
+ * @method Region getRegion(bool $force = false)
+ * @method Region getResidency(bool $force = false)
+ * @method WorkPermitable getWorkPermission(bool $force = false)
+ * @method Party getParty(bool $force = false)
  * @method array getDonations()
- * @method Collection getArticles()
+ * @method Collection getArticles(bool $force = false)
  */
 class Account extends Model {}

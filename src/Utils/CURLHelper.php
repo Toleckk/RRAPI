@@ -94,8 +94,8 @@ class CURLHelper{
             curl_setopt($ch, CURLOPT_COOKIEFILE, $cookieFile);
         else if(isset($this->cookiePath))
             curl_setopt($ch, CURLOPT_COOKIEFILE, $this->cookiePath);
-        if (isset($referer))
-            curl_setopt($ch, CURLOPT_REFERER, $referer);
+
+        curl_setopt($ch, CURLOPT_REFERER, isset($referer) ? $referer : 'http://rivalregions.com/');
 
         $body = curl_exec($ch);
         curl_close($ch);

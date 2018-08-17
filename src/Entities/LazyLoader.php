@@ -24,8 +24,8 @@ abstract class LazyLoader{
         $this->id = $id;
     }
 
-    protected function get(){
-        return $this->loaded ? $this : $this->load();
+    protected function get(bool $force = false){
+        return (($this->loaded && !$force) ? $this : $this->load());
     }
 
     protected abstract function load();

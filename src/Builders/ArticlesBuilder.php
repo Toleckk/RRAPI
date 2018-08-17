@@ -8,14 +8,12 @@
 
 namespace Builder;
 
-use Entity\Account;
+use Entity\Article;
 
 class ArticlesBuilder extends CollectionBuilder {
-
-    //TODO
     protected function parseIDs(){
-        $this->data->append(new Account($this->rr, '102808314'));
-        $this->data->append(new Account($this->rr, '212255944'));
-        $this->data->append(new Account($this->rr, '39775966'));
+        if (preg_match_all('/news\/show\/(\d+)/', $this->html, $matches))
+            for ($j = 0; $j < count($matches[1]); $j += 3)
+                $this->data->append(new Article($this->rr, intval($matches[1][$j])));
     }
 }

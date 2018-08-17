@@ -93,8 +93,11 @@ class AccountBuilder extends ModelBuilder {
     }
 
     private function setWorkPermissionIfExist(array &$matches): void{
-        if(Parser::find('/action="' . addcslashes($matches[0], '/') . '/', $this->html))
-            $this->data->workPermission = Parser::getNumeric(array_shift($matches));
+        if(Parser::find('/action="' . addcslashes($matches[0], '/') . '/', $this->html)) {
+            $linkArr = explode('/', array_shift($matches));
+            $className = 'Entity\\' . ($linkArr[1] === 'state_details' ? 'State' : 'Region');
+            $this->data->workPermission = new $className($this->rr, $linkArr[2]);
+        }
     }
 
     private function setPostsIfExist(array $matches): void{
@@ -195,7 +198,10 @@ class AccountBuilder extends ModelBuilder {
 
 
     protected function parsePoliticalViews(){
-        $this->data->politicalViews = Parser::find('/<td class="white imp" colspan="2" style="width: 250px;">
+        if(preg_match('/text:.*"&nbsp;(.+)"(.*\n){2}.*selected: 1/', $this->html, $matches))
+            $this->data->politicalViews = $matches[1];
+        else
+            $this->data->politicalViews = Parser::find('/<td class="white imp" colspan="2" style="width: 250px;">
 					(\D+)				<\/td>/', $this->html, true)[1];
     }
 }

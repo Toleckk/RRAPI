@@ -84,17 +84,25 @@ class RR{
      * @throws \Exception\RequestException
      */
     public function getAccount(int $id = -1) : Account{
-        //for debug
-        $html =  $this->curl->get("http://rivalregions.com/slide/profile/"
-            . ($id < 0 ? $this->accountID : $id)
-            . "?c=" . CURLHelper::milliseconds());
-        file_put_contents('test.txt', $html);
-        //
-        return (new AccountBuilder($html, $this))->build();
+        return (new AccountBuilder(
+            $this->curl->get("http://rivalregions.com/slide/profile/"
+                . ($id < 0 ? $this->accountID : $id)
+                . "?c=" . CURLHelper::milliseconds()),
+            $this))->build();
     }
 
+    /**
+     * @param int $id
+     * @return Collection
+     * @throws \Exception\RequestException
+     */
     public function getArticles(int $id = -1) : Collection{
-        return (new ArticlesBuilder('sdfdf', $this))->build();
+        for($i = 0, $arr = new Collection($this, $id, 'Article'); true; $i += 50)
+            if (count($newArr = (new ArticlesBuilder($this->curl->get("http://rivalregions.com/listed/papers/$id"
+                    . ($i === 0 ? '?c=' . time() : "/0/$i")), $this))->build()) > 0)
+                $arr->append($newArr);
+            else
+                return $arr;
     }
 
     public function getRegion(int $id = -1) : Region{

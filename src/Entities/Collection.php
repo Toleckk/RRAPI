@@ -11,7 +11,7 @@ namespace Entity;
 
 use RR\RR;
 
-class Collection extends Container implements \ArrayAccess {
+class Collection extends Container implements \ArrayAccess, \Countable {
     protected $containerType;
 
     /**
@@ -93,5 +93,44 @@ class Collection extends Container implements \ArrayAccess {
      */
     public function offsetUnset($offset){
         $this->data->offsetUnset($offset);
+    }
+
+    /**
+     * Count elements of an object
+     * @link http://php.net/manual/en/countable.count.php
+     * @return int The custom count as an integer.
+     * </p>
+     * <p>
+     * The return value is cast to an integer.
+     * @since 5.1.0
+     */
+    public function count(): int{
+        return $this->data->count();
+    }
+
+    /**
+     * @param Model|Collection|array $new
+     */
+    public function append($new){
+        if(is_object($new) && array_pop(explode('\\', get_class($new))) == $this->containerType)
+            $this->data->append($new);
+        else if(is_array($new))
+            $this->appendArray($new);
+        else if(is_object($new) && get_class($new) == self::class)
+            $this->appendCollection($new);
+    }
+
+    private function appendArray(array $arr){
+
+        foreach ($arr as $newElement) {
+            if (is_object($newElement)
+                && array_pop(explode('\\', get_class($newElement))) === $this->containerType)
+                $this->data->append($newElement);
+        }
+    }
+
+    private function appendCollection(Collection $collection){
+        if($collection->containerType === $this->containerType)
+            $this->appendArray($collection->data->getArrayCopy());
     }
 }

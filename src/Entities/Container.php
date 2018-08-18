@@ -32,7 +32,7 @@ abstract class Container extends LazyLoader{
         if (!preg_match('/^get(\w+)$/', $name, $matches))
             return null;
 
-        $value = $this->data->{lcfirst($matches[1])};
+        $value = $this->get()->data->{lcfirst($matches[1])};
         return (is_object($value) && is_subclass_of($value, self::class)
             ? $value->get((bool)$arguments[0]) : $value);
     }

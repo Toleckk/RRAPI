@@ -20,13 +20,13 @@ class Collection extends Container implements \ArrayAccess, \Countable {
      * @param int|null $id
      * @param string $containerType
      */
-    public function __construct(RR &$rr = null, int $id = null, string $containerType){
+    public function __construct(RR &$rr = null, int $id = null, string $containerType = null){
         parent::__construct($rr, $id);
         $this->data = new \ArrayObject();
         $this->containerType = $containerType;
     }
 
-    public static function fromBuilder(RR &$rr, \ArrayObject $arr, string $containerType){
+    public static function fromBuilder(RR &$rr, \ArrayObject $arr, string $containerType = null){
         $instance = new static($rr, null, $containerType);
         $instance->fillData($arr);
         return $instance;
@@ -63,7 +63,8 @@ class Collection extends Container implements \ArrayAccess, \Countable {
      * @since 5.0.0
      */
     public function offsetGet($offset){
-        return $this->data->offsetGet($offset)->get();
+        $value = $this->data->offsetGet($offset);
+        return is_object($value) && is_subclass_of($value, Container::class) ? $value->get() : $value;
     }
 
     /**
@@ -121,16 +122,11 @@ class Collection extends Container implements \ArrayAccess, \Countable {
     }
 
     private function appendArray(array $arr){
-
-        foreach ($arr as $newElement) {
-            if (is_object($newElement)
-                && array_pop(explode('\\', get_class($newElement))) === $this->containerType)
-                $this->data->append($newElement);
-        }
+        foreach ($arr as $value)
+            $this->data->append($value);
     }
 
     private function appendCollection(Collection $collection){
-        if($collection->containerType === $this->containerType)
-            $this->appendArray($collection->data->getArrayCopy());
+        $this->appendArray($collection->data->getArrayCopy());
     }
 }

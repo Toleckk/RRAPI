@@ -54,6 +54,7 @@ class AccountBuilder extends ModelBuilder {
         $this->data->damage = Parser::getNumeric(Parser::find('/\n.+/',
             Parser::find('/<td class="white imp" colspan="2" style="width: 250px;">.+\n.+<\/td>/',
                 $this->html)));
+        $this->data->wars = new Collection($this->rr, $this->data->id, 'War');
     }
 
     protected function parseArticles(): void{

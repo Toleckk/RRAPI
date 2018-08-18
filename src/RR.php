@@ -15,9 +15,12 @@ use Authorization\VK;
 use Builder\AccountBuilder;
 use Builder\ArticlesBuilder;
 use Builder\RegionBuilder;
+use Builder\WarBuilder;
+use Builder\WarsBuilder;
 use Entity\Account;
 use Entity\Collection;
 use Entity\Region;
+use Entity\War;
 use Util\CURLHelper;
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -107,5 +110,28 @@ class RR{
 
     public function getRegion(int $id = -1) : Region{
         return (new RegionBuilder('see', $this))->build();
+    }
+
+    /**
+     * @param int $id
+     * @return Collection
+     * @throws \Exception\RequestException
+     */
+    public function getWars(int $id = -1) : Collection{
+        for($i = 0, $arr = new Collection($this, $id, 'Article'); true; $i += 12)
+            if(count($newArr = (new WarsBuilder($this->curl->get("http://rivalregions.com/war/inall/$id"
+                    . ($i === 0 ? '?c=' . time() : "/$i")), $this))->build()) > 0)
+                $arr->append($newArr);
+            else
+                return $arr;
+    }
+
+    /**
+     * @param int $id
+     * @return War
+     * @throws \Exception\RequestException
+     */
+    public function getWar(int $id) : War{
+        return (new WarBuilder($this, $this->curl->get("http://rivalregions.com/#war/details/$id")))->build();
     }
 }

@@ -37,5 +37,6 @@ namespace Entity;
  * @method Party getParty(bool $force = false)
  * @method array getDonations()
  * @method Collection getArticles(bool $force = false)
+ * @method Collection getWars(bool $force = false)
  */
 class Account extends Model {}

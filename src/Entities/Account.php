@@ -38,5 +38,6 @@ namespace Entity;
  * @method array getDonations()
  * @method Collection getArticles(bool $force = false)
  * @method Collection getWars(bool $force = false)
+ * @method Collection getDamageHistory(bool $force = false)
  */
 class Account extends Model {}

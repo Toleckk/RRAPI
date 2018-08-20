@@ -42,4 +42,5 @@ class WarsBuilder extends CollectionBuilder{
             return 'defend';
         return 'neutral';
     }
+
 }

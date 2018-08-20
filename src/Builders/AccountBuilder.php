@@ -55,6 +55,7 @@ class AccountBuilder extends ModelBuilder {
             Parser::find('/<td class="white imp" colspan="2" style="width: 250px;">.+\n.+<\/td>/',
                 $this->html)));
         $this->data->wars = new Collection($this->rr, $this->data->id, 'War');
+        $this->data->damages = new Collection($this->rr, $this->data->id, 'Damage');
     }
 
     protected function parseArticles(): void{

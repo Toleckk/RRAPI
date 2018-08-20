@@ -20,6 +20,7 @@
             "Authorization\\": "src/Authorization",
             "Entity\\": "src/Entities",
             "Builder\\": "src/Builders",
+            "Worker\\": "src/Workers",
             "RR\\": "src"
         }
     }

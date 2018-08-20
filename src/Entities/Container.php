@@ -16,11 +16,22 @@ abstract class Container extends LazyLoader{
     protected $data;
 
     protected function load(){
-        $this->data = $this->rr->{
-        'get' . (get_class($this) == Collection::class ? ($this->containerType . 's')
-            : array_pop(explode('\\', static::class)))}($this->id)->data;
+        $this->data = $this->rr->{$this->makeWorkerClassName()}->{$this->makeGetterFunctionName()}($this->id)->data;
         $this->loaded = true;
         return $this;
+    }
+
+    private function makeGetterFunctionName(): string{
+        return 'get' . (get_class($this) == Collection::class
+            ? ($this->containerType . 's')
+            : array_pop(explode('\\', static::class)));
+    }
+
+    private function makeWorkerClassName(): string{
+        return lcfirst(array_pop(explode('\\',
+            static::class === Collection::class
+                ? get_class(debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT)[3]['object'])
+                : static::class)));
     }
 
     protected function fillData($data){

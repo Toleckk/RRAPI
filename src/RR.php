@@ -12,29 +12,20 @@ use Authorization\AuthorizationHelper;
 use Authorization\Facebook;
 use Authorization\Google;
 use Authorization\VK;
-use Builder\AccountBuilder;
-use Builder\ArticlesBuilder;
-use Builder\RegionBuilder;
-use Builder\WarBuilder;
-use Builder\WarsBuilder;
-use Entity\Account;
-use Entity\Collection;
-use Entity\Region;
-use Entity\War;
 use Util\CURLHelper;
+use Worker\AccountWorker;
+use Worker\ArticleWorker;
+use Worker\RegionWorker;
+use Worker\WarWorker;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
 class RR{
-    /**
-     * @var CURLHelper
-     */
-    private $curl;
-
-    /**
-     * @var int
-     */
     private $accountID;
+    public $account;
+    public $article;
+    public $region;
+    public $war;
 
     /**
      * RR constructor.
@@ -44,8 +35,12 @@ class RR{
     private function __construct(AuthorizationHelper $authHelper){
         $authHelper->authorize();
         $this->accountID = $authHelper->accountID;
+        $curl = new CURLHelper($authHelper->cookiePath);
 
-        $this->curl = new CURLHelper($authHelper->cookiePath);
+        $this->account = new AccountWorker($this, $curl);
+        $this->article = new ArticleWorker($this, $curl);
+        $this->region = new RegionWorker($this, $curl);
+        $this->war = new WarWorker($this, $curl);
     }
 
     /**
@@ -82,56 +77,9 @@ class RR{
     }
 
     /**
-     * @param int $id
-     * @return Account
-     * @throws \Exception\RequestException
+     * @return int
      */
-    public function getAccount(int $id = -1) : Account{
-        return (new AccountBuilder(
-            $this->curl->get("http://rivalregions.com/slide/profile/"
-                . ($id < 0 ? $this->accountID : $id)
-                . "?c=" . CURLHelper::milliseconds()),
-            $this))->build();
-    }
-
-    /**
-     * @param int $id
-     * @return Collection
-     * @throws \Exception\RequestException
-     */
-    public function getArticles(int $id = -1) : Collection{
-        for($i = 0, $arr = new Collection($this, $id, 'Article'); true; $i += 50)
-            if (count($newArr = (new ArticlesBuilder($this->curl->get("http://rivalregions.com/listed/papers/$id"
-                    . ($i === 0 ? '?c=' . time() : "/0/$i")), $this))->build()) > 0)
-                $arr->append($newArr);
-            else
-                return $arr;
-    }
-
-    public function getRegion(int $id = -1) : Region{
-        return (new RegionBuilder('see', $this))->build();
-    }
-
-    /**
-     * @param int $id
-     * @return Collection
-     * @throws \Exception\RequestException
-     */
-    public function getWars(int $id = -1) : Collection{
-        for($i = 0, $arr = new Collection($this, $id, 'Article'); true; $i += 12)
-            if(count($newArr = (new WarsBuilder($this->curl->get("http://rivalregions.com/war/inall/$id"
-                    . ($i === 0 ? '?c=' . time() : "/$i")), $this))->build()) > 0)
-                $arr->append($newArr);
-            else
-                return $arr;
-    }
-
-    /**
-     * @param int $id
-     * @return War
-     * @throws \Exception\RequestException
-     */
-    public function getWar(int $id) : War{
-        return (new WarBuilder($this, $this->curl->get("http://rivalregions.com/#war/details/$id")))->build();
+    public function getAccountID(): int{
+        return $this->accountID;
     }
 }

@@ -122,8 +122,11 @@ class Collection extends Container implements \ArrayAccess, \Countable {
     }
 
     private function appendArray(array $arr){
-        foreach ($arr as $value)
-            $this->data->append($value);
+        foreach ($arr as $key => $value)
+            if(is_string($key))
+                $this->data[$key] = $value;
+            else
+                $this->data->append($value);
     }
 
     private function appendCollection(Collection $collection){

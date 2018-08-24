@@ -180,9 +180,14 @@ class AccountBuilder extends ModelBuilder {
     }
 
     protected function parseDateTime(){
-        preg_match_all('/(.+\d+:\d+).+\n/', $this->html, $matches);
-        $this->setBaseDateTime($matches[1]);
-        $this->setWorkPermissionTime($matches[1]);
+        $matches = Parser::findAll('/(.+\d+:\d+).+\n/', $this->html, true)[1];
+        $this->setNationChangeDate($matches);
+        $this->setBaseDateTime($matches);
+        $this->setWorkPermissionTime($matches);
+    }
+
+    private function setNationChangeDate(array &$matches){
+        $this->data->nationChangeAt = array_pop(explode('"', array_pop($matches)));
     }
 
     private function setBaseDateTime(array &$matches){

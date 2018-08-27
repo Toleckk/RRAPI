@@ -15,6 +15,7 @@ use Authorization\VK;
 use Util\CURLHelper;
 use Worker\AccountWorker;
 use Worker\ArticleWorker;
+use Worker\GovernmentWorker;
 use Worker\RegionWorker;
 use Worker\WarWorker;
 
@@ -26,6 +27,7 @@ class RR{
     public $article;
     public $region;
     public $war;
+    public $government;
 
     /**
      * RR constructor.
@@ -41,6 +43,7 @@ class RR{
         $this->article = new ArticleWorker($this, $curl);
         $this->region = new RegionWorker($this, $curl);
         $this->war = new WarWorker($this, $curl);
+        $this->government = new GovernmentWorker($this, $curl);
     }
 
     /**

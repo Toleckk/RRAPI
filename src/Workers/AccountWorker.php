@@ -15,7 +15,6 @@ use Builder\WarsBuilder;
 use Entity\Account;
 use Entity\Collection;
 use Util\CURLHelper;
-use Util\HTMLParseHelper;
 
 class AccountWorker extends Worker{
     /**

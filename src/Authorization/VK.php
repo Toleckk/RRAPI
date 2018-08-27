@@ -18,6 +18,7 @@ class VK extends AuthorizationHelper{
     const OAUTH_URL =
         'https://oauth.vk.com/authorize?client_id=3524629&display=page&scope=notify,friends&redirect_uri=http://rivalregions.com/main/vklogin&response_type=code&state=';
     const COOKIE_CHECK_URL = 'https://m.vk.com/id0';
+    const HEADERS_PARSING_REGEX = '/Location: .*access_token=(.+?)&.*viewer_id=(\d+)&.*auth_key=(.+\n)/';
 
     /**
      * @param string $cookiePath
@@ -100,18 +101,8 @@ class VK extends AuthorizationHelper{
      * @return string[]
      */
     private function getParametersFromHeaders(string $headers) : array{
-        preg_match_all('/Location.+\n/', $headers, $matches);
-        preg_match('/[^(Location: )].+\n/', $matches[0][1],$matches);
-        $location = $matches[0];
-        preg_match('/access_token=.+?&/', $location,$matches);
-        preg_match('/[^(access_token=)].+[^&]/', $matches[0], $matches);
-        $parameters['accessToken'] = trim($matches[0]);
-        preg_match('/viewer_id=\d+?&/', $location, $matches);
-        $parameters['id'] = Parser::getNumeric($matches[0]);
-        preg_match('/auth_key=.+\n/', $location, $matches);
-        preg_match('/[^(auth_key=)].+\n/', $matches[0],$matches);
-        $parameters['hash'] = trim($matches[0]);
-        return $parameters;
+        preg_match(static::HEADERS_PARSING_REGEX, $headers, $matches);
+        return ['accessToken' => $matches[1], 'id' => $matches[2], 'hash' => trim($matches[3])];
     }
 
     /**

@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-    	"php": ">=7.2"
+    	"php": ">=7.2",
+        "toleckk/elephant.io": "dev-master"
     },
     "minimum-stability": "dev",
     "autoload": {

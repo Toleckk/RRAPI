@@ -6,9 +6,9 @@
  * Time: 2:49
  */
 
-namespace Builder;
+namespace RR\Builder;
 
-use Entity\Article;
+use RR\Entity\Article;
 
 class ArticlesBuilder extends CollectionBuilder {
     protected function parseIDs(){

@@ -6,7 +6,7 @@
  * Time: 15:59
  */
 
-namespace Builder;
+namespace RR\Builder;
 
 
 class StateBuilder extends ModelBuilder {

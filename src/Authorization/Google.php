@@ -6,16 +6,16 @@
  * Time: 15:00
  */
 
-namespace Authorization;
+namespace RR\Authorization;
 
 
 class Google extends AuthorizationHelper {
 
-    public function logIn(): void{
+    public function logIn(string $cookiePath): void{
         // TODO: Implement authorization() method.
     }
 
-    protected function authorizeRR(string $id, string $cookiePath): void{
+    protected function authorizeRR(string $cookiePath): void{
         // TODO: Implement authorizationRR() method.
     }
 }

@@ -6,16 +6,16 @@
  * Time: 14:59
  */
 
-namespace Authorization;
+namespace RR\Authorization;
 
 
 class Facebook extends AuthorizationHelper {
 
-    public function logIn(): void{
+    public function logIn(string $cookiePath): void{
         // TODO: Implement authorization() method.
     }
 
-    protected function authorizeRR(string $id, string $cookiePath): void{
+    protected function authorizeRR(string $cookiePath): void{
         // TODO: Implement authorizationRR() method.
     }
 }

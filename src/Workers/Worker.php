@@ -6,11 +6,11 @@
  * Time: 20:04
  */
 
-namespace Worker;
+namespace RR\Worker;
 
 
 use RR\RR;
-use Util\CURLHelper;
+use RR\Util\CURLHelper;
 
 abstract class Worker{
     protected $rr;

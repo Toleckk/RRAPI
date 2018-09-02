@@ -6,12 +6,11 @@
  * Time: 19:54
  */
 
-namespace Builder;
+namespace RR\Builder;
 
-
-use Entity\Collection;
-use Entity\War;
-use Util\HTMLParseHelper as Parser;
+use RR\Entity\Collection;
+use RR\Entity\War;
+use RR\Util\HTMLParseHelper as Parser;
 
 /**
  * Class WarsBuilder

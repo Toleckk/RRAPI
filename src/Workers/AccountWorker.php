@@ -6,21 +6,20 @@
  * Time: 20:03
  */
 
-namespace Worker;
+namespace RR\Worker;
 
-
-use Builder\AccountBuilder;
-use Builder\DamageHistoryBuilder;
-use Builder\WarsBuilder;
-use Entity\Account;
-use Entity\Collection;
-use Util\CURLHelper;
+use RR\Builder\AccountBuilder;
+use RR\Builder\DamageHistoryBuilder;
+use RR\Builder\WarsBuilder;
+use RR\Entity\Account;
+use RR\Entity\Collection;
+use RR\Util\CURLHelper;
 
 class AccountWorker extends Worker{
     /**
      * @param int $id
      * @return Account
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      */
     public function getAccount(int $id = -1): Account{
         return (new AccountBuilder(
@@ -33,7 +32,7 @@ class AccountWorker extends Worker{
     /**
      * @param int $id
      * @return Collection
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      */
     public function getWars(int $id = -1): Collection{
         for($i = 0, $arr = new Collection($this->rr, $id); true; $i += 12)
@@ -47,7 +46,7 @@ class AccountWorker extends Worker{
     /**
      * @param int $id
      * @return Collection
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      */
     public function getDamages(int $id = -1): Collection{
         for($i = 0, $arr = new Collection($this->rr, $id); true; $i += 25)

@@ -6,7 +6,7 @@
  * Time: 2:38
  */
 
-namespace Entity;
+namespace RR\Entity;
 
 
 use RR\RR;

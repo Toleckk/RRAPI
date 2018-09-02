@@ -6,13 +6,13 @@
  * Time: 13:06
  */
 
-namespace Authorization;
+namespace RR\Authorization;
 
 
-use Exception\MakeDirectoryException;
-use Exception\RequestException;
-use Util\CURLHelper;
-use Util\HTMLParseHelper;
+use \RR\Exception\MakeDirectoryException;
+use \RR\Exception\RequestException;
+use \RR\Util\CURLHelper;
+use \RR\Util\HTMLParseHelper;
 
 abstract class AuthorizationHelper{
     const COOKIE_PATH = __DIR__.'/../../cookie';
@@ -77,7 +77,7 @@ abstract class AuthorizationHelper{
     /**
      * @param $cookieRR
      * @return bool|int
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      */
     protected function checkRRCookies(string $cookieRR){
         if(preg_match('/var id.+;/',

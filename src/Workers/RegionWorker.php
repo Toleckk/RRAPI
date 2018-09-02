@@ -6,10 +6,10 @@
  * Time: 20:17
  */
 
-namespace Worker;
+namespace RR\Worker;
 
-use Builder\RegionBuilder;
-use Entity\Region;
+use RR\Builder\RegionBuilder;
+use RR\Entity\Region;
 
 class RegionWorker extends Worker {
 

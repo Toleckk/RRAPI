@@ -6,7 +6,7 @@
  * Time: 14:59
  */
 
-namespace Exception;
+namespace RR\Exception;
 
 
 class AuthorizationException extends RRException{

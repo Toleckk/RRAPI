@@ -6,12 +6,12 @@
  * Time: 13:11
  */
 
-namespace Authorization;
+namespace RR\Authorization;
 
 
-use Exception\AuthorizationException;
-use Exception\RequestException;
-use Util\HTMLParseHelper as Parser;
+use RR\Exception\AuthorizationException;
+use RR\Exception\RequestException;
+use RR\Util\HTMLParseHelper as Parser;
 
 //TODO: REFACTOR
 class VK extends AuthorizationHelper{
@@ -37,7 +37,7 @@ class VK extends AuthorizationHelper{
      * @param string $cookiePath
      * @throws AuthorizationException
      * @throws RequestException
-     * @throws \Exception\MakeDirectoryException
+     * @throws \RR\Exception\MakeDirectoryException
      */
     //TODO: REFACTOR
     protected function authorizeRR(string $cookiePath) : void {
@@ -107,7 +107,7 @@ class VK extends AuthorizationHelper{
 
     /**
      * @return string
-     * @throws \Exception\MakeDirectoryException
+     * @throws \RR\Exception\MakeDirectoryException
      */
     private function getID(){
             $cookie = file_get_contents(static::getCookieDirectory('VK')

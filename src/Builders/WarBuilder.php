@@ -6,6 +6,6 @@
  * Time: 19:23
  */
 
-namespace Builder;
+namespace RR\Builder;
 
 class WarBuilder extends ModelBuilder {}

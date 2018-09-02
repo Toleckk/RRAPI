@@ -8,16 +8,17 @@
 
 namespace RR;
 
-use Authorization\AuthorizationHelper;
-use Authorization\Facebook;
-use Authorization\Google;
-use Authorization\VK;
-use Util\CURLHelper;
-use Worker\AccountWorker;
-use Worker\ArticleWorker;
-use Worker\GovernmentWorker;
-use Worker\RegionWorker;
-use Worker\WarWorker;
+use RR\Authorization\AuthorizationHelper;
+use RR\Authorization\Facebook;
+use RR\Authorization\Google;
+use RR\Authorization\VK;
+use RR\Util\CURLHelper;
+use RR\Worker\AccountWorker;
+use RR\Worker\ArticleWorker;
+use RR\Worker\ChatWorker;
+use RR\Worker\GovernmentWorker;
+use RR\Worker\RegionWorker;
+use RR\Worker\WarWorker;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -28,11 +29,12 @@ class RR{
     public $region;
     public $war;
     public $government;
+    public $chat;
 
     /**
      * RR constructor.
      * @param AuthorizationHelper $authHelper
-     * @throws \Exception\MakeDirectoryException
+     * @throws \RR\Exception\MakeDirectoryException
      */
     private function __construct(AuthorizationHelper $authHelper){
         $authHelper->authorize();
@@ -44,6 +46,7 @@ class RR{
         $this->region = new RegionWorker($this, $curl);
         $this->war = new WarWorker($this, $curl);
         $this->government = new GovernmentWorker($this, $curl);
+        $this->chat = new ChatWorker($this, $curl);
     }
 
     /**
@@ -51,7 +54,7 @@ class RR{
      * @param string $password
      * @param bool $force
      * @return RR
-     * @throws \Exception\MakeDirectoryException
+     * @throws \RR\Exception\MakeDirectoryException
      */
     public static function VK(string $login, string $password, bool $force = false): RR {
         return new static(new VK($login, $password, $force));
@@ -62,7 +65,7 @@ class RR{
      * @param string $password
      * @param bool $force
      * @return RR
-     * @throws \Exception\MakeDirectoryException
+     * @throws \RR\Exception\MakeDirectoryException
      */
     public static function Facebook(string $login, string $password, bool $force = false) : RR{
         return new static(new Facebook($login, $password, $force));
@@ -73,7 +76,7 @@ class RR{
      * @param string $password
      * @param bool $force
      * @return RR
-     * @throws \Exception\MakeDirectoryException
+     * @throws \RR\Exception\MakeDirectoryException
      */
     public static function Google(string $login, string $password, bool $force = false) : RR{
         return new static(new Google($login, $password, $force));

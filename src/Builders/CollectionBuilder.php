@@ -6,12 +6,12 @@
  * Time: 4:05
  */
 
-namespace Builder;
+namespace RR\Builder;
 
 
-use Entity\Collection;
+use RR\Entity\Collection;
 use RR\RR;
-use Util\HTMLParseHelper as Parser;
+use RR\Util\HTMLParseHelper as Parser;
 
 abstract class CollectionBuilder extends Builder {
 

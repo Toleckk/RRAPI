@@ -16,13 +16,14 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Util\\": "src/Utils",
-            "Exception\\": "src/Exceptions",
-            "Authorization\\": "src/Authorization",
-            "Entity\\": "src/Entities",
-            "Builder\\": "src/Builders",
-            "Worker\\": "src/Workers",
-            "RR\\": "src"
+            "RR\\Util\\": "src/Utils/",
+            "RR\\Exception\\": "src/Exceptions/",
+            "RR\\Authorization\\": "src/Authorization/",
+            "RR\\Entity\\": "src/Entities/",
+            "RR\\Builder\\": "src/Builders/",
+            "RR\\Worker\\": "src/Workers/",
+            "RR\\Constants\\": "src/Constants/",
+            "RR\\": "src/"
         }
     }
 }

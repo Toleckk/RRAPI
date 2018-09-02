@@ -6,7 +6,7 @@
  * Time: 21:56
  */
 
-namespace Entity;
+namespace RR\Entity;
 
 //TODO
 use RR\RR;

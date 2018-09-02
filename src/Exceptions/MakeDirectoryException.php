@@ -6,7 +6,7 @@
  * Time: 12:36
  */
 
-namespace Exception;
+namespace RR\Exception;
 
 
 class MakeDirectoryException extends RRException {

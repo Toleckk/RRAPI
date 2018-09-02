@@ -6,7 +6,7 @@
  * Time: 1:14
  */
 
-namespace Entity;
+namespace RR\Entity;
 
 
 class Factory extends Model {}

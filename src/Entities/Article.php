@@ -6,7 +6,7 @@
  * Time: 22:09
  */
 
-namespace Entity;
+namespace RR\Entity;
 
 /**
  * Class Article

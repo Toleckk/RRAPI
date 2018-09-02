@@ -6,17 +6,17 @@
  * Time: 20:15
  */
 
-namespace Worker;
+namespace RR\Worker;
 
 
-use Builder\ArticlesBuilder;
-use Entity\Collection;
+use RR\Builder\ArticlesBuilder;
+use RR\Entity\Collection;
 
 class ArticleWorker extends Worker {
     /**
      * @param int $id
      * @return Collection
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      * @deprecated
      */
     public function getArticles(int $id = -1) : Collection{

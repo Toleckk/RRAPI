@@ -6,7 +6,7 @@
  * Time: 3:28
  */
 
-namespace Entity;
+namespace RR\Entity;
 
 
 abstract class Container extends LazyLoader{

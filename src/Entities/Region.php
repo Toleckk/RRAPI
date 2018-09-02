@@ -6,7 +6,7 @@
  * Time: 23:00
  */
 
-namespace Entity;
+namespace RR\Entity;
 
 /**
  * Class Region

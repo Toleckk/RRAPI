@@ -6,7 +6,7 @@
  * Time: 19:33
  */
 
-namespace Entity;
+namespace RR\Entity;
 
 /**
  * Class War

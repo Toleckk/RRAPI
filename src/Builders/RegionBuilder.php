@@ -6,7 +6,7 @@
  * Time: 1:52
  */
 
-namespace Builder;
+namespace RR\Builder;
 
 //TODO
 class RegionBuilder extends ModelBuilder{}

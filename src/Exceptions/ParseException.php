@@ -6,7 +6,7 @@
  * Time: 16:39
  */
 
-namespace Exception;
+namespace RR\Exception;
 
 
 class ParseException extends RRException{

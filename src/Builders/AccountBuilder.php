@@ -6,18 +6,17 @@
  * Time: 2:03
  */
 
-namespace Builder;
+namespace RR\Builder;
 
-use Entity\Autonomy;
-use Entity\Collection;
-use Entity\Factory;
-use Entity\Medal;
-use Entity\Party;
-use Entity\Region;
-use Entity\State;
-use Util\HTMLParseHelper as Parser;
+use RR\Entity\Collection;
+use RR\Entity\Factory;
+use RR\Entity\Medal;
+use RR\Entity\Party;
+use RR\Entity\Region;
+use RR\Entity\State;
+use RR\Util\HTMLParseHelper as Parser;
 
-class AccountBuilder extends ModelBuilder {
+class AccountBuilder extends ModelBuilder{
 
     protected function parseID(): void{
         $this->data->id = Parser::getNumeric(Parser::find('/slide\/profile\/\d+/', $this->html));
@@ -85,7 +84,7 @@ class AccountBuilder extends ModelBuilder {
     }
 
     private function setLeadershipIfLeader(array &$matches): void{
-        if(!is_null(Parser::find('/state_details/', $matches[0])))
+        if (!is_null(Parser::find('/state_details/', $matches[0])))
             $this->data->leaderOf = new State($this->rr, Parser::getNumeric(array_shift($matches)));
     }
 
@@ -95,16 +94,16 @@ class AccountBuilder extends ModelBuilder {
     }
 
     private function setWorkPermissionIfExist(array &$matches): void{
-        if(Parser::find('/action="' . addcslashes($matches[0], '/') . '/', $this->html)) {
+        if (Parser::find('/action="' . addcslashes($matches[0], '/') . '/', $this->html)) {
             $linkArr = explode('/', array_shift($matches));
-            $className = 'Entity\\' . ($linkArr[1] === 'state_details' ? 'State' : 'Region');
+            $className = 'RR\\Entity\\' . ($linkArr[1] === 'state_details' ? 'State' : 'Region');
             $this->data->workPermission = new $className($this->rr, $linkArr[2]);
         }
     }
 
     private function setPostsIfExist(array $matches): void{
         foreach ($matches as $match)
-            if(Parser::find('/state_details/', $match))
+            if (Parser::find('/state_details/', $match))
                 $this->data->postIn = new State($this->rr, Parser::getNumeric($match));
             else
                 $this->data->governorOf = $this->rr->getRegion(Parser::getNumeric($match))->getAutonomy();
@@ -114,7 +113,7 @@ class AccountBuilder extends ModelBuilder {
     protected function parseNickname(): void{
         $matches = explode(' ', Parser::find('/<h1 class="white hide_for_name">.+>/', $this->html));
         $this->data->nickname = Parser::deleteAll('/<.+>/', array_pop($matches));
-        if(preg_match('/\[(.+)\]/', array_pop($matches), $matches))
+        if (preg_match('/\[(.+)\]/', array_pop($matches), $matches))
             $this->data->partyTag = $matches[1];
     }
 
@@ -128,14 +127,14 @@ class AccountBuilder extends ModelBuilder {
         $donations = [];
         foreach (Parser::findAll('/tip pointer .+?(<\/span>)/',
             Parser::deleteAll('/&nbsp;/', $this->html)) as $match)
-            if(!is_null($key = explode(' ', $match)[2]))
+            if (!is_null($key = explode(' ', $match)[2]))
                 $donations[static::rightDonationKey($key)]
                     = Parser::deleteAll('/<|>/', Parser::find('/>.+</', $match));
         $this->data->donations = $donations;
     }
 
     private static function rightDonationKey(string $key): string{
-        if($key == 'white')
+        if ($key == 'white')
             return 'money';
         else if ($key == 'yellow')
             return 'gold';
@@ -166,12 +165,12 @@ class AccountBuilder extends ModelBuilder {
     }
 
     protected function parseFactory(){
-        if(!is_null($id = Parser::find('/factory\/index\/(\d+)/', $this->html, true)[1]))
+        if (!is_null($id = Parser::find('/factory\/index\/(\d+)/', $this->html, true)[1]))
             $this->data->factory = new Factory($this->rr, $id);
     }
 
     protected function parseMedals(){
-        if(preg_match_all('/listed\/medals\/(\d+).+title="(.+?)".+\n.*?(\d+)/', $this->html, $matches)) {
+        if (preg_match_all('/listed\/medals\/(\d+).+title="(.+?)".+\n.*?(\d+)/', $this->html, $matches)) {
             $arr = [];
             for ($i = 0; $i < count($matches[0]); $i++)
                 array_push($arr, new Medal($this->rr, $matches[1][$i], $matches[3][$i], $matches[2][$i]));
@@ -198,14 +197,14 @@ class AccountBuilder extends ModelBuilder {
     }
 
     private function setWorkPermissionTime(array &$matches){
-        if(!empty($matches))
+        if (!empty($matches))
             $this->data->workPermissionTime =
                 Parser::find('/: (.+)$/', array_shift($matches), true)[1];
     }
 
 
     protected function parsePoliticalViews(){
-        if(preg_match('/text:.*"&nbsp;(.+)"(.*\n){2}.*selected: 1/', $this->html, $matches))
+        if (preg_match('/text:.*"&nbsp;(.+)"(.*\n){2}.*selected: 1/', $this->html, $matches))
             $this->data->politicalViews = $matches[1];
         else
             $this->data->politicalViews = Parser::find('/<td class="white imp" colspan="2" style="width: 250px;">

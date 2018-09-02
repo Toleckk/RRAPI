@@ -6,10 +6,10 @@
  * Time: 4:05
  */
 
-namespace Builder;
+namespace RR\Builder;
 
 use RR\RR;
-use Util\HTMLParseHelper as Parser;
+use RR\Util\HTMLParseHelper as Parser;
 
 abstract class ModelBuilder extends Builder {
 

@@ -6,10 +6,9 @@
  * Time: 12:52
  */
 
-namespace Util;
+namespace RR\Util;
 
-
-use Exception\RequestException;
+use \RR\Exception\RequestException;
 
 class CURLHelper{
     public $headers = "";

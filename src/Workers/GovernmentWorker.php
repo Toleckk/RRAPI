@@ -6,11 +6,11 @@
  * Time: 0:13
  */
 
-namespace Worker;
+namespace RR\Worker;
 
 
-use Util\CURLHelper;
-use Util\HTMLParseHelper;
+use RR\Util\CURLHelper;
+use RR\Util\HTMLParseHelper;
 
 class GovernmentWorker extends Worker {
     const LAW_URL = 'http://rivalregions.com/parliament/donew/{{law}}/{{parameters}}/{{id}}'; //23 0 0
@@ -27,14 +27,14 @@ class GovernmentWorker extends Worker {
 
 
     /**
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      */
     public function cancelLaw(){
         $this->curl->post(static::CANCEL_LAW_URL, ['c' => $this->parseCHTML()]);
     }
 
     /**
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      */
     public function createOpenBorderLaw(){
         $this->curl->post(
@@ -45,7 +45,7 @@ class GovernmentWorker extends Worker {
 
     /**
      * @param string $capitalID
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      */
     public function createMilitaryAgreementLaw(string $capitalID){
         if(isset($capitalID))
@@ -58,7 +58,7 @@ class GovernmentWorker extends Worker {
     /**
      * @param int $resource
      * @param array $parameters
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      */
     public function createExplorationLaw(int $resource, array $parameters){
         $this->curl->post(
@@ -84,7 +84,7 @@ class GovernmentWorker extends Worker {
 
     /**
      * @return string
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      */
     private function parseCHTML(): string{
         return HTMLParseHelper::find("/var c_html = '(.+)';/",

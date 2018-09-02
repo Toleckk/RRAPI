@@ -6,9 +6,7 @@
  * Time: 12:38
  */
 
-namespace Exception;
+namespace RR\Exception;
 
 
-class RRException extends \Exception {
-
-}
+class RRException extends \Exception {}

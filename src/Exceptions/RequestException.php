@@ -6,7 +6,7 @@
  * Time: 13:23
  */
 
-namespace Exception;
+namespace RR\Exception;
 
 class RequestException extends RRException {
 

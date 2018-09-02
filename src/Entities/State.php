@@ -6,7 +6,7 @@
  * Time: 22:59
  */
 
-namespace Entity;
+namespace RR\Entity;
 
 /**
  * Class State

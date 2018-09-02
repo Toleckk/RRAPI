@@ -6,7 +6,7 @@
  * Time: 11:59
  */
 
-namespace Util;
+namespace RR\Util;
 
 
 class HTMLParseHelper{

@@ -6,16 +6,16 @@
  * Time: 20:14
  */
 
-namespace Worker;
+namespace RR\Worker;
 
-use Builder\WarBuilder;
-use Entity\War;
+use RR\Builder\WarBuilder;
+use RR\Entity\War;
 
 class WarWorker extends Worker {
     /**
      * @param int $id
      * @return War
-     * @throws \Exception\RequestException
+     * @throws \RR\Exception\RequestException
      */
     public function getWar(int $id) : War{
         return (new WarBuilder($this->curl->get("http://rivalregions.com/#war/details/$id"), $this->rr))->build();

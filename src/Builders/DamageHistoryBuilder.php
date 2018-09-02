@@ -6,12 +6,12 @@
  * Time: 20:09
  */
 
-namespace Builder;
+namespace RR\Builder;
 
 
-use Entity\Collection;
-use Entity\War;
-use Util\HTMLParseHelper as Parser;
+use RR\Entity\Collection;
+use RR\Entity\War;
+use RR\Util\HTMLParseHelper as Parser;
 
 class DamageHistoryBuilder extends CollectionBuilder{
 

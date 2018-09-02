@@ -6,7 +6,7 @@
  * Time: 2:08
  */
 
-namespace Entity;
+namespace RR\Entity;
 
 /**
  * Class Account

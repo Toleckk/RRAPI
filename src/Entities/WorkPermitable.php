@@ -6,7 +6,7 @@
  * Time: 0:07
  */
 
-namespace Entity;
+namespace RR\Entity;
 
 /**
  * Interface WorkPermitable
